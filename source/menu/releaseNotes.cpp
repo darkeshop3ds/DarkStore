@@ -67,7 +67,7 @@ void StoreUtils::ReleaseNotesLogic(int &scrollIndex, int &storeMode) {
 /*
 	I place it temporarely here for now.
 
-	Display Release changelog for Ghost eShop.
+	Display Release changelog for DarkStore.
 */
 void DisplayChangelog() {
 	if (config->changelog()) {
@@ -89,7 +89,7 @@ void DisplayChangelog() {
 			Gui::DrawString(5, 25 - scrollIndex, 0.5f, TEXT_COLOR, notes, 390, 0, font, C2D_WordWrap);
 			Gui::Draw_Rect(0, 0, 400, 25, BAR_COLOR);
 			Gui::Draw_Rect(0, 25, 400, 1, BAR_OUTL_COLOR);
-			Gui::DrawStringCentered(0, 1, 0.7f, TEXT_COLOR, "Ghost eShop", 390, 0, font);
+			Gui::DrawStringCentered(0, 1, 0.7f, TEXT_COLOR, "DarkStore", 390, 0, font);
 			Gui::Draw_Rect(0, 215, 400, 25, BAR_COLOR);
 			Gui::Draw_Rect(0, 214, 400, 1, BAR_OUTL_COLOR);
 			Gui::DrawStringCentered(0, 217, 0.7f, TEXT_COLOR, C_V, 390, 0, font);

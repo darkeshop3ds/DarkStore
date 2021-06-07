@@ -528,7 +528,7 @@ bool IsUpdateAvailable(const std::string &URL, int revCurrent) {
 	int currentRev : Const Référence à la révision en cours. (-1 si inutilisée)
 	std::string &fl : Sortie du chemin de fichier.
 	bool isDownload : Si téléchargement ou mise à jour.
-	bool isUDB : Si téléchargement ghosteshop.eshop ou non.
+	bool isUDB : Si téléchargement darkstore.eshop ou non.
 */
 bool DownloadEshop(const std::string &URL, int currentRev, std::string &fl, bool isDownload, bool isUDB) {
 	if (isUDB) Msg::DisplayMsg(Lang::get("DOWNLOADING_ESHOP_DB"));
@@ -585,7 +585,7 @@ bool DownloadEshop(const std::string &URL, int currentRev, std::string &fl, bool
 		if (parsedAPI.contains("storeInfo") && parsedAPI.contains("storeContent")) {
 			/* Vérifier, version == _ESHOP_VERSION. */
 			if (parsedAPI["storeInfo"].contains("version") && parsedAPI["storeInfo"]["version"].is_number()) {
-				if (parsedAPI["storeInfo"]["version"] == 3 || parsedAPI["storeInfo"]["version"] == 4) {
+				if (parsedAPI["storeInfo"]["version"] >= 1) {
 					if (currentRev > -1) {
 
 						if (parsedAPI["storeInfo"].contains("revision") && parsedAPI["storeInfo"]["revision"].is_number()) {
@@ -645,7 +645,7 @@ bool DownloadEshop(const std::string &URL, int currentRev, std::string &fl, bool
 						}
 					}
 
-				} else if (parsedAPI["storeInfo"]["version"] < 3) {
+				} else if (parsedAPI["storeInfo"]["version"] < 0) {
 					Msg::waitMsg(Lang::get("ESHOP_TOO_OLD"));
 
 				} else if (parsedAPI["storeInfo"]["version"] > _ESHOP_VERSION) {
@@ -750,12 +750,12 @@ bool DownloadSpriteSheet(const std::string &URL, const std::string &file) {
 }
 
 /*
-	Vérifier les mises à jour de Ghost eShop
+	Vérifier les mises à jour de DarkStore
 */
-GEUpdate IsGEUpdateAvailable() {
+DSUpdate IsDSUpdateAvailable() {
 	if (!checkWifiStatus()) return { false, "", "" };
 
-	Msg::DisplayMsg(Lang::get("CHECK_GE_UPDATES"));
+	Msg::DisplayMsg(Lang::get("CHECK_DS_UPDATES"));
 	Result ret = 0;
 
 	void *socubuf = memalign(0x1000, 0x100000);
@@ -802,7 +802,7 @@ GEUpdate IsGEUpdateAvailable() {
 		nlohmann::json parsedAPI = nlohmann::json::parse(result_buf);
 
 		if (parsedAPI.contains("tag_name") && parsedAPI["tag_name"].is_string()) {
-			GEUpdate update = { false, "", "" };
+			DSUpdate update = { false, "", "" };
 			update.Version = parsedAPI["tag_name"];
 
 			socExit();
@@ -833,10 +833,10 @@ extern bool is3DSX, exiting;
 extern std::string _3dsxPath;
 
 /*
-	Exécuter l’action de mise à jour Ghost eShop.
+	Exécuter l’action de mise à jour DarkStore.
 */
 void UpdateAction() {
-	GEUpdate res = IsGEUpdateAvailable();
+	DSUpdate res = IsDSUpdateAvailable();
 	if (res.Available) {
 		bool confirmed = false;
 		int scrollIndex = 0;
@@ -852,7 +852,7 @@ void UpdateAction() {
 			Gui::DrawString(5, 25 - scrollIndex, 0.5f, TEXT_COLOR, res.Notes, 390, 0, font, C2D_WordWrap);
 			Gui::Draw_Rect(0, 0, 400, 25, BAR_COLOR);
 			Gui::Draw_Rect(0, 25, 400, 1, BAR_OUTL_COLOR);
-			Gui::DrawStringCentered(0, 1, 0.7f, TEXT_COLOR, "Ghost eShop", 390, 0, font);
+			Gui::DrawStringCentered(0, 1, 0.7f, TEXT_COLOR, "DarkStore", 390, 0, font);
 			Gui::Draw_Rect(0, 215, 400, 25, BAR_COLOR);
 			Gui::Draw_Rect(0, 214, 400, 1, BAR_OUTL_COLOR);
 			Gui::DrawStringCentered(0, 217, 0.7f, TEXT_COLOR, res.Version, 390, 0, font);
@@ -879,9 +879,9 @@ void UpdateAction() {
 			if ((down & KEY_A) || (down & KEY_B) || (down & KEY_START) || (down & KEY_TOUCH)) confirmed = true;
 		}
 
-		if (ScriptUtils::downloadRelease("Bot-Ghost/GHA", (is3DSX ? "GhostEshop.3dsx" : "GhostEshop.cia"),
-		(is3DSX ? _3dsxPath : "sdmc:/GhostEshop.cia"),
-		false, Lang::get("DOWNLOADING_GHOST_ESHOP")) == 0) {
+		if (ScriptUtils::downloadRelease("Bot-Ghost/GHA", (is3DSX ? "DarkStore.3dsx" : "DarkStore.cia"),
+		(is3DSX ? _3dsxPath : "sdmc:/DarkStore.cia"),
+		false, Lang::get("DOWNLOADING_DARKSTORE")) == 0) {
 
 			if (is3DSX) {
 				Msg::waitMsg(Lang::get("UPDATE_DONE"));
@@ -889,8 +889,8 @@ void UpdateAction() {
 				return;
 			}
 
-			ScriptUtils::installFile("sdmc:/GhostEshop.cia", false, Lang::get("INSTALL_GHOST_ESHOP"));
-			ScriptUtils::removeFile("sdmc:/GhostEshop.cia", Lang::get("DELETE_UNNEEDED_FILE"));
+			ScriptUtils::installFile("sdmc:/DarkStore.cia", false, Lang::get("INSTALL_DARKSTORE"));
+			ScriptUtils::removeFile("sdmc:/DarkStore.cia", Lang::get("DELETE_UNNEEDED_FILE"));
 			Msg::waitMsg(Lang::get("UPDATE_DONE"));
 			exiting = true;
 		}
@@ -928,7 +928,7 @@ std::vector<StoreList> FetchStores() {
 
 	CURL *hnd = curl_easy_init();
 
-	ret = setupContext(hnd, "https://cdn.ghosteshop.com/script/eShop.json");
+	ret = setupContext(hnd, "https://darkstore.ml/assets/eShop.json");
 	if (ret != 0) {
 		socExit();
 		free(result_buf);

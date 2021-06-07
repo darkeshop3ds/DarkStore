@@ -1,6 +1,6 @@
 BasicInfo:
-  Title                   : "GHOST-HBGEGET"
-  ProductCode             : "CTR-H-GHOST"
+  Title                   : "DarkStore"
+  ProductCode             : "CTR-H-DARK"
   Logo                    : Homebrew # Nintendo / Licensed / Distributed / iQue / iQueForSystem
 
 RomFs:
@@ -8,7 +8,7 @@ RomFs:
 
 TitleInfo:
   Category                : Application
-  UniqueId                : 0x73926
+  UniqueId                : 0x42042
 
 Option:
   UseOnSD                 : true # true si l'application doit être installée sur SD

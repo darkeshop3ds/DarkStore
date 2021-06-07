@@ -29,7 +29,7 @@
 
 #include "common.hpp"
 
-#define APP_TITLE "Ghost eShop"
+#define APP_TITLE "DarkStore"
 #define VERSION_STRING "12.0"
 
 enum DownloadError {
@@ -48,7 +48,7 @@ struct StoreList {
 	std::string Description;
 };
 
-struct GEUpdate {
+struct DSUpdate {
 	bool Available = false;
 	std::string Notes = "";
 	std::string Version = "";
@@ -81,7 +81,7 @@ void doneMsg(void);
 bool IsUpdateAvailable(const std::string &URL, int revCurrent);
 bool DownloadEshop(const std::string &URL, int currentRev, std::string &fl, bool isDownload = false, bool isUDB = false);
 bool DownloadSpriteSheet(const std::string &URL, const std::string &file);
-GEUpdate IsGEUpdateAvailable();
+DSUpdate IsDSUpdateAvailable();
 void UpdateAction();
 std::vector<StoreList> FetchStores();
 C2D_Image FetchScreenshot(const std::string &URL);

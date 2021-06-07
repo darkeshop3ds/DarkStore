@@ -34,8 +34,8 @@
 #include "msg.hpp"
 #include "screenCommon.hpp"
 
-#define _STORE_PATH "sdmc:/3ds/GhosteShop/stores/"
-#define _META_PATH "sdmc:/3ds/GhosteShop/MetaData.json"
+#define _STORE_PATH "sdmc:/3ds/DarkStore/stores/"
+#define _META_PATH "sdmc:/3ds/DarkStore/MetaData.json"
 #define _ESHOP_VERSION 4
 
 inline std::unique_ptr<Config> config;

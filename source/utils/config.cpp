@@ -92,7 +92,7 @@ void Config::sysLang() {
 	Au cas où ça n’existe pas.
 */
 void Config::initialize() {
-	FILE *temp = fopen("sdmc:/3ds/GhosteShop/Config.json", "w");
+	FILE *temp = fopen("sdmc:/3ds/DarkStore/Config.json", "w");
 	char tmp[2] = { '{', '}' };
 	fwrite(tmp, sizeof(tmp), 1, temp);
 	fclose(temp);
@@ -102,11 +102,11 @@ void Config::initialize() {
 	Constructeur de la configuration.
 */
 Config::Config() {
-	if (access("sdmc:/3ds/GhosteShop/Config.json", F_OK) != 0) {
+	if (access("sdmc:/3ds/DarkStore/Config.json", F_OK) != 0) {
 		this->initialize();
 	}
 
-	FILE *file = fopen("sdmc:/3ds/GhosteShop/Config.json", "r");
+	FILE *file = fopen("sdmc:/3ds/DarkStore/Config.json", "r");
 	this->json = nlohmann::json::parse(file, nullptr, false);
 	fclose(file);
 
@@ -135,7 +135,7 @@ Config::Config() {
 /* Ecrivez à config si changesMade. */
 void Config::save() {
 	if (this->changesMade) {
-		FILE *file = fopen("sdmc:/3ds/GhosteShop/Config.json", "w");
+		FILE *file = fopen("sdmc:/3ds/DarkStore/Config.json", "w");
 
 		/* Valeurs Théoriques. */
 		this->setString("Language", this->language());

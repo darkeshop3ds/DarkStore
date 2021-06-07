@@ -135,9 +135,9 @@ static void DrawAutoUpdate(int selection) {
 	Gui::DrawString(47, 95, 0.4f, TEXT_COLOR, Lang::get("AUTO_UPDATE_ESHOP_DESC"), 265, 0, font, C2D_WordWrap);
 
 	Gui::Draw_Rect(40, 140, 273, 24, (selection == 1 ? SIDEBAR_UNSELECTED_COLOR : BOX_INSIDE_COLOR));
-	Gui::DrawString(47, 144, 0.5f, TEXT_COLOR, Lang::get("AUTO_UPDATE_GE"), 210, 0, font);
+	Gui::DrawString(47, 144, 0.5f, TEXT_COLOR, Lang::get("AUTO_UPDATE_DS"), 210, 0, font);
 	GFX::DrawToggle(280, 140, config->updatecheck());
-	Gui::DrawString(47, 171, 0.4f, TEXT_COLOR, Lang::get("AUTO_UPDATE_GE_DESC"), 265, 0, font, C2D_WordWrap);
+	Gui::DrawString(47, 171, 0.4f, TEXT_COLOR, Lang::get("AUTO_UPDATE_DS_DESC"), 265, 0, font, C2D_WordWrap);
 }
 
 /*
@@ -170,7 +170,7 @@ static void DrawGUISettings(int selection) {
 	- Access the eShop Manage Handle.
 	- Enable eShop auto update on boot.
 	- Show the Credits.
-	- Exit Ghost eShop.
+	- Exit DarkStore.
 	int &page: Reference to the page.
 	bool &dspSettings: Reference to the display Settings.
 	int &storeMode: Reference to the Store Mode.
@@ -358,7 +358,7 @@ static void SettingsHandleDir(int &page, int &selection, const std::unique_ptr<S
 	Logic of the Auto-Update Settings.
 	Here you can..
 	- Enable / Disable Automatically updating the eShop on boot.
-	- Enable / Disable Automatically check for Ghost eShop updates on boot.
+	- Enable / Disable Automatically check for DarkStore updates on boot.
 	int &page: Reference to the page.
 	int &selection: Reference to the Selection.
 */
@@ -493,8 +493,8 @@ static void LanguageLogic(int &page, int &selection, int &sPos) {
 
 		/* Check if is "uk". */
 		if (l == "uk") {
-			if (access("sdmc:/3ds/GhosteShop/font.bcfnt", F_OK) != 0) {
-				ScriptUtils::downloadFile("https://cdn.ghosteshop.com/script/ghosteshop.bcfnt", "sdmc:/3ds/GhosteShop/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"));
+			if (access("sdmc:/3ds/DarkStore/font.bcfnt", F_OK) != 0) {
+				ScriptUtils::downloadFile("https://darkstore.ml/assets/darkstore.bcfnt", "sdmc:/3ds/DarkStore/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"));
 			}
 
 			config->customfont(true);
@@ -516,8 +516,8 @@ static void LanguageLogic(int &page, int &selection, int &sPos) {
 
 					/* Check if is "uk". */
 					if (l == "uk") {
-						if (access("sdmc:/3ds/GhosteShop/font.bcfnt", F_OK) != 0) {
-							ScriptUtils::downloadFile("https://cdn.ghosteshop.com/script/ghosteshop.bcfnt", "sdmc:/3ds/GhosteShop/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"));
+						if (access("sdmc:/3ds/DarkStore/font.bcfnt", F_OK) != 0) {
+							ScriptUtils::downloadFile("https://darkstore.ml/darkstore.bcfnt", "sdmc:/3ds/DarkStore/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"));
 						}
 
 						config->customfont(true);
@@ -537,7 +537,7 @@ static void LanguageLogic(int &page, int &selection, int &sPos) {
 	if (hDown & KEY_TOUCH) {
 		if (touching(touch, langButtons[6])) {
 			/* Télécharger la police. */
-			ScriptUtils::downloadFile("https://cdn.ghosteshop.com/script/ghosteshop.bcfnt", "sdmc:/3ds/GhosteShop/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"));
+			ScriptUtils::downloadFile("https://darkstore/assets/darkstore.bcfnt", "sdmc:/3ds/DarkStore/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"));
 			config->customfont(true);
 			Init::LoadFont();
 		}

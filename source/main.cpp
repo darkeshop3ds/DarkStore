@@ -46,9 +46,9 @@ static void InitForARG() {
 
 	/* Créer des répertoires, s’il manque. */
 	mkdir("sdmc:/3ds", 0777);
-	mkdir("sdmc:/3ds/GhosteShop", 0777);
-	mkdir("sdmc:/3ds/GhosteShop/stores", 0777);
-	mkdir("sdmc:/3ds/GhosteShop/shortcuts", 0777);
+	mkdir("sdmc:/3ds/DarkStore", 0777);
+	mkdir("sdmc:/3ds/DarkStore/stores", 0777);
+	mkdir("sdmc:/3ds/DarkStore/shortcuts", 0777);
 
 	config = std::make_unique<Config>();
 	Lang::load(config->language());

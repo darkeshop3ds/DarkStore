@@ -39,10 +39,10 @@ void Overlays::ShowCredits() {
 		C2D_TargetClear(Bottom, TRANSPARENT);
 
 		GFX::DrawTop();
-		GFX::DrawSprite(sprites_GhosteShop_idx, 240, 30);
-		Gui::DrawStringCentered(0, 1, 0.7f, TEXT_COLOR, "Ghost eShop - " + Lang::get("CREDITS"), 395, 0, font);
+		GFX::DrawSprite(sprites_DarkStore_idx, 240, 30);
+		Gui::DrawStringCentered(0, 1, 0.7f, TEXT_COLOR, "DarkStore - " + Lang::get("CREDITS"), 395, 0, font);
 
-		Gui::DrawString(10, 30, 0.5f, TEXT_COLOR, "- Ghost eShop Team", 0, 0, font);
+		Gui::DrawString(10, 30, 0.5f, TEXT_COLOR, "- DarkStore Team", 0, 0, font);
 		Gui::DrawString(10, 50, 0.5f, TEXT_COLOR, "- " + Lang::get("FILES_HOSTING_ANONYKU"), 0, 0, font);
 		Gui::DrawString(10, 70, 0.5f, TEXT_COLOR, "- " + Lang::get("CITRA_BIGN_ICON"), 0, 0, font);
 		Gui::DrawString(10, 90, 0.5f, TEXT_COLOR, "- https://hshop.erista.me/", 0, 0, font);
@@ -56,7 +56,7 @@ void Overlays::ShowCredits() {
 		Gui::DrawStringCentered(0, 218, 0.6f, TEXT_COLOR, Lang::get("CURRENT_VERSION") + std::string(V_STRING), 390, 0, font);
 
 		GFX::DrawBottom();
-		GFX::DrawSprite(sprites_GhosteShop_core_idx, 0, 0);
+		GFX::DrawSprite(sprites_DarkStore_core_idx, 0, 0);
 		C3D_FrameEnd(0);
 
 		hidScanInput();

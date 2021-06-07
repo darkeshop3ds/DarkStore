@@ -40,57 +40,57 @@ extern void DisplayChangelog();
 /*
 	MainScreen Constructor.
 	Initialized Meta, Store and StoreEntry class and:
-	- Downloads ghosteshop.eshop.. in case nothing exist.
+	- Downloads darkstore-homebrew.eshop.. in case nothing exist.
 */
 MainScreen::MainScreen() {
 	this->meta = std::make_unique<Meta>();
 
 	/* Check if lastStore is accessible. */
-	if (config->lastStore() != "ghosteshop.eshop" || config->lastStore() != "") {
+	if (config->lastStore() != "darkstore-homebrew.eshop" || config->lastStore() != "") {
 		if (access((std::string(_STORE_PATH) + config->lastStore()).c_str(), F_OK) != 0) {
-			config->lastStore("ghosteshop.eshop");
+			config->lastStore("darkstore-homebrew.eshop");
 
 		} else {
 			/* check version and file here. */
 			const EshopInfo info = GetInfo((std::string(_STORE_PATH) + config->lastStore()), config->lastStore());
 
 			if (info.Version != 3 && info.Version != _ESHOP_VERSION) {
-				config->lastStore("ghosteshop.eshop");
+				config->lastStore("darkstore-homebrew.eshop");
 			}
 
 			if (info.File != "") { // Ensure to check for this.
 				if ((info.File.find("/") != std::string::npos)) {
-					config->lastStore("ghosteshop.eshop"); // It does contain a '/' which is invalid.
+					config->lastStore("darkstore-homebrew.eshop"); // It does contain a '/' which is invalid.
 				}
 			}
 		}
 	}
 
-	/* If ghosteshop.eshop --> Get! */
-	if (config->lastStore() == "ghosteshop.eshop" || config->lastStore() == "") {
-		if (access("sdmc:/3ds/GhosteShop/stores/ghosteshop.eshop", F_OK) != 0) {
+	/* If darkstore-homebrew.eshop --> Get! */
+	if (config->lastStore() == "darkstore-homebrew.eshop" || config->lastStore() == "") {
+		if (access("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.eshop", F_OK) != 0) {
 			if (checkWifiStatus()) {
 				std::string tmp = ""; // Juste une intérimaire.
-				DownloadEshop("https://cdn.ghosteshop.com/script/ghosteshop.eshop", -1, tmp, true, true);
-				DownloadSpriteSheet("https://cdn.ghosteshop.com/script/icon.t3x", "icon.t3x");
-				DownloadSpriteSheet("https://cdn.ghosteshop.com/script/icon_1.t3x", "icon_1.t3x");
-				DownloadSpriteSheet("https://cdn.ghosteshop.com/script/icon_2.t3x", "icon_2.t3x");
+				DownloadEshop("https://darkstore.ml/assets/darkstore-homebrew.eshop", -1, tmp, true, true);
+				DownloadSpriteSheet("https://darkstore.ml/assets/icon.t3x", "icon.t3x");
+				DownloadSpriteSheet("https://darkstore.ml/assets/icon_1.t3x", "icon_1.t3x");
+				DownloadSpriteSheet("https://darkstore.ml/assets/icon_2.t3x", "icon_2.t3x");
 
 			} else {
 				notConnectedMsg();
 			}
 
 		} else {
-			const EshopInfo info = GetInfo("sdmc:/3ds/GhosteShop/stores/ghosteshop.eshop", "ghosteshop.eshop");
+			const EshopInfo info = GetInfo("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.eshop", "darkstore-homebrew.eshop");
 
 			if (info.Version != 3 && info.Version != _ESHOP_VERSION) {
 				Msg::waitMsg("Not passing the check!");
 				if (checkWifiStatus()) {
 					std::string tmp = ""; // Juste une intérimaire.
-					DownloadEshop("https://cdn.ghosteshop.com/script/ghosteshop.eshop", -1, tmp, true, true);
-					DownloadSpriteSheet("https://cdn.ghosteshop.com/script/icon.t3x", "icon.t3x");
-					DownloadSpriteSheet("https://cdn.ghosteshop.com/script/icon_1.t3x", "icon_1.t3x");
-					DownloadSpriteSheet("https://cdn.ghosteshop.com/script/icon_2.t3x", "icon_2.t3x");
+					DownloadEshop("https://darkstore.ml/assets/darkstore-homebrew.eshop", -1, tmp, true, true);
+					DownloadSpriteSheet("https://darkstore.ml/assets/icon.t3x", "icon.t3x");
+					DownloadSpriteSheet("https://darkstore.ml/assets/icon_1.t3x", "icon_1.t3x");
+					DownloadSpriteSheet("https://darkstore.ml/assets/icon_2.t3x", "icon_2.t3x");
 
 				} else {
 					notConnectedMsg();

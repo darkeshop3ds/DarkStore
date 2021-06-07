@@ -93,8 +93,8 @@ bool touching(touchPosition touch, Structs::ButtonPos button) {
 void Init::LoadFont() {
 	if (config->customfont()) {
 		if (!needUnloadFont) {
-			if (access("sdmc:/3ds/GhosteShop/font.bcfnt", F_OK) == 0) {
-				Gui::loadFont(font, "sdmc:/3ds/GhosteShop/font.bcfnt");
+			if (access("sdmc:/3ds/DarkStore/font.bcfnt", F_OK) == 0) {
+				Gui::loadFont(font, "sdmc:/3ds/DarkStore/font.bcfnt");
 				needUnloadFont = true;
 			}
 		}
@@ -113,7 +113,7 @@ void Init::UnloadFont() {
 }
 
 /*
-	Initialiser Ghost eShop.
+	Initialiser DarkStore.
 */
 Result Init::Initialize() {
 	gfxInitDefault();
@@ -132,9 +132,9 @@ Result Init::Initialize() {
 
 	/* Créer des répertoires, s’il manque. */
 	mkdir("sdmc:/3ds", 0777);
-	mkdir("sdmc:/3ds/GhosteShop", 0777);
-	mkdir("sdmc:/3ds/GhosteShop/stores", 0777);
-	mkdir("sdmc:/3ds/GhosteShop/shortcuts", 0777);
+	mkdir("sdmc:/3ds/DarkStore", 0777);
+	mkdir("sdmc:/3ds/DarkStore/stores", 0777);
+	mkdir("sdmc:/3ds/DarkStore/shortcuts", 0777);
 
 	config = std::make_unique<Config>();
 	Lang::load(config->language());
@@ -159,7 +159,7 @@ Result Init::Initialize() {
 }
 
 /*
-	MainLoop de Ghost eShop.
+	MainLoop de DarkStore.
 */
 Result Init::MainLoop() {
 	bool fullExit = false;
@@ -199,7 +199,7 @@ Result Init::MainLoop() {
 }
 
 /*
-	Fermer Ghost eShop.
+	Fermer DarkStore.
 */
 Result Init::Exit() {
 	Gui::exit();

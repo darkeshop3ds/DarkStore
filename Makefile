@@ -75,7 +75,7 @@ VERSION_MICRO := 0
 endif
 
 #---------------------------------------------------------------------------------
-TARGET		:=	GhostEshop
+TARGET		:=	DarkStore
 BUILD		:=	build
 UNIVCORE	:= 	Universal-Core
 SOURCES		:=	$(UNIVCORE) source source/download source/gui source/lang source/menu source/overlays \
@@ -86,7 +86,7 @@ INCLUDES	:=	$(UNIVCORE) include include/download include/gui include/lang includ
 GRAPHICS	:=	assets/gfx
 ROMFS		:=	romfs
 GFXBUILD	:=	$(ROMFS)/gfx
-APP_AUTHOR	:=	Ghost Eshop Team's
+APP_AUTHOR	:=	Dark98, Universal Team
 APP_DESCRIPTION :=	An Alternative eShop for Nintendo 3DS
 ICON		:=	app/icon.png
 BNR_IMAGE	:=  app/banner.png
@@ -219,9 +219,12 @@ all: $(BUILD) $(GFXBUILD) $(DEPSDIR) $(ROMFS_T3XFILES) $(T3XHFILES)
 #------------------------------------------------------------------------------
 clean:
 	@echo clean ...
-	@rm -fr $(BUILD) $(TARGET).elf
+	@rm -fr DarkStore.elf
+	@rm -fr DarkStore.cia
+	@rm -fr DarkStore.3dsx
+	@rm -fr DarkStore.smdh
 	@rm -fr $(OUTDIR)
-
+	@rm -fr $(BUILD)
 
 #---------------------------------------------------------------------------------
 cia: $(BUILD)

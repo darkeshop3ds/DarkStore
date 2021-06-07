@@ -52,13 +52,13 @@ Meta::Meta() {
 	Importez les anciennes métadonnées du fichier 'updates.json'.
 */
 void Meta::ImportMetadata() {
-	if (access("sdmc:/3ds/GhosteShop/updates.json", F_OK) != 0) {
+	if (access("sdmc:/3ds/DarkStore/updates.json", F_OK) != 0) {
 		config->metadata(false);
 		return; // Introuvables.
 	}
 
 	Msg::DisplayMsg(Lang::get("FETCHING_METADATA"));
-	FILE *old = fopen("sdmc:/3ds/GhosteShop/updates.json", "r");
+	FILE *old = fopen("sdmc:/3ds/DarkStore/updates.json", "r");
 	nlohmann::json oldJson = nlohmann::json::parse(old, nullptr, false);
 	fclose(old);
 

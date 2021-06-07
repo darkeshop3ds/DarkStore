@@ -68,11 +68,11 @@ public:
 	bool metadata() const { return this->v_metadata; };
 	void metadata(bool v) { this->v_metadata = v; if (!this->changesMade) this->changesMade = true; };
 
-	/* Vérification des Mises à Jour de Ghost eShop au Démarrage. */
+	/* Vérification des Mises à Jour de DarkStore au Démarrage. */
 	bool updatecheck() const { return this->v_updateCheck; };
 	void updatecheck(bool v) { this->v_updateCheck = v; if (!this->changesMade) this->changesMade = true; };
 
-	/* Vérification des Mises à Jour de Ghost eShop au Démarrage. */
+	/* Vérification des Mises à Jour de DarkStore au Démarrage. */
 	bool usebg() const { return this->v_showBg; };
 	void usebg(bool v) { this->v_showBg = v; if (!this->changesMade) this->changesMade = true; };
 
@@ -99,9 +99,9 @@ private:
 	nlohmann::json json;
 	bool changesMade = false;
 
-	std::string v_language = "en", v_lastStore = "ghosteshop.eshop",
+	std::string v_language = "en", v_lastStore = "darkstore-homebrew.eshop",
 				v_3dsxPath = "sdmc:/3ds", v_ndsPath = "sdmc:", v_archivePath = "sdmc:",
-				v_shortcutPath = "sdmc:/3ds/GhosteShop/shortcuts";
+				v_shortcutPath = "sdmc:/3ds/DarkStore/shortcuts";
 
 	bool v_list = false, v_autoUpdate = true, v_metadata = true, v_updateCheck = true,
 		v_showBg = false, v_customFont = false, v_changelog = true;
