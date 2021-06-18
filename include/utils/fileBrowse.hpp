@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_FILE_BROWSE_HPP
-#define _GHOST_ESHOP_FILE_BROWSE_HPP
+#ifndef _DARKSTORE_FILE_BROWSE_HPP
+#define _DARKSTORE_FILE_BROWSE_HPP
 
 #include <dirent.h>
 #include <string>

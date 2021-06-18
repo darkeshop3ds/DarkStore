@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_CONFIG_HPP
-#define _GHOST_ESHOP_CONFIG_HPP
+#ifndef _DARKSTORE_CONFIG_HPP
+#define _DARKSTORE_CONFIG_HPP
 
 #include "json.hpp"
 

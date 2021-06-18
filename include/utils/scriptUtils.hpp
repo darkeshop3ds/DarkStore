@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_SCRIPT_UTILS_HPP
-#define _GHOST_ESHOP_SCRIPT_UTILS_HPP
+#ifndef _DARKSTORE_SCRIPT_UTILS_HPP
+#define _DARKSTORE_SCRIPT_UTILS_HPP
 
 #include "json.hpp"
 #include <3ds.h>

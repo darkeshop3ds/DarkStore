@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_OVERLAY_HPP
-#define _GHOST_ESHOP_OVERLAY_HPP
+#ifndef _DARKSTORE_OVERLAY_HPP
+#define _DARKSTORE_OVERLAY_HPP
 
 #include "common.hpp"
 #include "store.hpp"

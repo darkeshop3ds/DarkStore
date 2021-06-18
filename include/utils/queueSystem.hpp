@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_QUEUE_SYSTEM_HPP
-#define _GHOST_ESHOP_QUEUE_SYSTEM_HPP
+#ifndef _DARKSTORE_QUEUE_SYSTEM_HPP
+#define _DARKSTORE_QUEUE_SYSTEM_HPP
 
 #include "json.hpp"
 #include <citro2d.h>

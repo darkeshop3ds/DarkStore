@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_SCREENSHOT_HPP
-#define _GHOST_ESHOP_SCREENSHOT_HPP
+#ifndef _DARKSTORE_SCREENSHOT_HPP
+#define _DARKSTORE_SCREENSHOT_HPP
 
 #include <citro2d.h>
 #include <string>

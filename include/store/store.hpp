@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_STORE_HPP
-#define _GHOST_ESHOP_STORE_HPP
+#ifndef _DARKSTORE_STORE_HPP
+#define _DARKSTORE_STORE_HPP
 
 #include "json.hpp"
 #include <citro2d.h>

@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_COMMON_HPP
-#define _GHOST_ESHOP_COMMON_HPP
+#ifndef _DARKSTORE_COMMON_HPP
+#define _DARKSTORE_COMMON_HPP
 
 #include <3ds.h>
 #include "config.hpp"

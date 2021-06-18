@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_ARGUMENT_PARSER_HPP
-#define _GHOST_ESHOP_ARGUMENT_PARSER_HPP
+#ifndef _DARKSTORE_ARGUMENT_PARSER_HPP
+#define _DARKSTORE_ARGUMENT_PARSER_HPP
 
 #include "json.hpp"
 #include "store.hpp"

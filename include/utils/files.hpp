@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_FILES_HPP
-#define _GHOST_ESHOP_FILES_HPP
+#ifndef _DARKSTORE_FILES_HPP
+#define _DARKSTORE_FILES_HPP
 
 #include "common.hpp"
 

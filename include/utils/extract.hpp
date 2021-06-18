@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_EXTRACT_HPP
-#define _GHOST_ESHOP_EXTRACT_HPP
+#ifndef _DARKSTORE_EXTRACT_HPP
+#define _DARKSTORE_EXTRACT_HPP
 
 #include "common.hpp"
 

@@ -44,7 +44,7 @@
 	"DOWNLOAD_FAILED": "Download Failed!",
 	"DOWNLOADING_ESHOP": "Downloading eShop...",
 	"DOWNLOADING_ESHOP_DB": "Downloading eShop...",
-	"DOWNLOADING_GHOST_ESHOP": "Downloading DarkStore...",
+	"DOWNLOADING_DARKSTORE": "Downloading DarkStore...",
 	"DOWNLOADING_COMPATIBLE_FONT": "Downloading compatible font...",
 	"DOWNLOADING_SPRITE_SHEET": "Downloading Spritesheet...",
 	"DOWNLOADING_SPRITE_SHEET2": "Downloading Spritesheet %i of %i...",
@@ -74,7 +74,7 @@
 	"GUI_SETTINGS": "GUI Settings",
 	"GUI_SETTINGS_BTN": "GUI settings...",
 	"INCLUDE_IN_RESULTS": "Include in results:",
-	"INSTALL_GHOST_ESHOP": "Installing DarkStore...",
+	"INSTALL_DARKSTORE": "Installing DarkStore...",
 	"INVALID_ESHOP": "Invalid eShop",
 	"KEY_CONTINUE": "Press any key to continue.",
 	"LANGUAGE": "Language",
@@ -119,6 +119,6 @@
 	"UPDATING_SPRITE_SHEET": "Updating Spritesheet...",
 	"UPDATING_SPRITE_SHEET2": "Updating Spritesheet %i of %i...",
 	"VERSION": "Version",
-	"WEBSITE": "Full Credits & Changelog Can Be Found On Ghosteshop.com",
+	"WEBSITE": "Website In Progress",
 	"YES": "Yes"
 }

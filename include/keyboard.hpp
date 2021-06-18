@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _GHOST_ESHOP_KEYBOARD_HPP
-#define _GHOST_ESHOP_KEYBOARD_HPP
+#ifndef _DARKSTORE_KEYBOARD_HPP
+#define _DARKSTORE_KEYBOARD_HPP
 
 #include "storeEntry.hpp"
 #include <string>
