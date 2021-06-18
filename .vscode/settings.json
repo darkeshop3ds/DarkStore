@@ -55,5 +55,38 @@
 		"ratio": "cpp",
 		"regex": "cpp",
 		"shared_mutex": "cpp"
+	},
+	"terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\bash.exe",
+"terminal.integrated.env.windows":
+{
+    "MSYSTEM": "MINGW64",
+    //"MSYS2_PATH_TYPE": "inherit",
+    "MSVSCODE": "1"
+},
+
+	"terminal.integrated.profiles.windows": {
+
+		"PowerShell": {
+			"source": "PowerShell",
+			"icon": "terminal-powershell"
+		},
+		"Test": {
+			"path": [
+				"C:\\sys64\\sys2_shell.exe"
+			],
+			"args": [],
+			"icon": "terminal-cmd"
+		},
+		"Command Prompt": {
+			"path": [
+				"${env:windir}\\Sysnative\\cmd.exe",
+				"${env:windir}\\System32\\cmd.exe"
+			],
+			"args": [],
+			"icon": "terminal-cmd"
+		},
+		"Git Bash": {
+			"source": "Git Bash"
+		}
 	}
 }
