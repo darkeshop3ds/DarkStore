@@ -39,7 +39,7 @@ void Overlays::ShowCredits() {
 		C2D_TargetClear(Bottom, TRANSPARENT);
 
 		GFX::DrawTop();
-		GFX::DrawSprite(sprites_DarkStore_idx, 240, 30);
+		//GFX::DrawSprite(sprites_DarkStore_idx, 240, 30);
 		Gui::DrawStringCentered(0, 1, 0.7f, TEXT_COLOR, "DarkStore - " + Lang::get("CREDITS"), 395, 0, font);
 
 		Gui::DrawString(10, 30, 0.5f, TEXT_COLOR, "- DarkStore Team", 0, 0, font);
@@ -49,14 +49,15 @@ void Overlays::ShowCredits() {
 		Gui::DrawString(10, 110, 0.5f, TEXT_COLOR, "- https://icons8.com/", 0, 0, font);
 		Gui::DrawString(10, 130, 0.5f, TEXT_COLOR, "- Dhalian. : Images", 0, 0, font);
 		Gui::DrawString(10, 150, 0.5f, TEXT_COLOR, Lang::get("CONTRIBUTOR_TRANSLATORS"), 210, 0, font);
-		Gui::DrawString(10, 197, 0.5f, TEXT_COLOR, Lang::get("WEBSITE"), 390, 0, font);
+		//Gui::DrawString(10, 197, 0.5f, TEXT_COLOR, Lang::get("WEBSITE"), 390, 0, font);
+		Gui::DrawString(10, 197, 0.5f, TEXT_COLOR, "Credits Are Not Up To Date & Are Probably Incorrect", 390, 0, font);
 
 		Gui::Draw_Rect(0, 215, 400, 25, BAR_COLOR);
 		Gui::Draw_Rect(0, 214, 400, 1, BAR_OUTL_COLOR);
 		Gui::DrawStringCentered(0, 218, 0.6f, TEXT_COLOR, Lang::get("CURRENT_VERSION") + std::string(V_STRING), 390, 0, font);
 
 		GFX::DrawBottom();
-		GFX::DrawSprite(sprites_DarkStore_core_idx, 0, 0);
+		//GFX::DrawSprite(sprites_DarkStore_core_idx, 0, 0);
 		C3D_FrameEnd(0);
 
 		hidScanInput();
