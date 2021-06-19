@@ -1,10 +1,10 @@
 {
-  "version": "v12.5",
-  "name": "2021",
+  "version": "v0.01",
+  "name": "Initial Release",
   "Author": "DarkStore Team",
   "files": ["DarkStore.cia", "DarkStore.3dsx", "DarkStore.smdh"],
   "Link": ["https://darkstore.ml/assets/DarkStore.cia", "https://darkstore.ml/assets/DarkStore.3dsx", "https://darkstore.ml/assets/DarkStore.smdh"],
-  "changelog_en": "- Adding ScreenShot,\n- Update Translations,\n- Adding icon of games to the download menu",
+  "changelog_en": "- Initial Release \n New Line Test",
   "changelog_es": "- Agregar captura de pantalla,\n- Actualizar traducciones,\n- Agregar ícono de juegos al menú de descarga",
   "changelog_fr": "- Ajout des captures d'écran,\n- Amélioration des traductions,\n- Ajout des icon des jeux dans le menu de téléchargement"
 }
