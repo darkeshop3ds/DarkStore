@@ -2,6 +2,9 @@
 .SUFFIXES:
 #---------------------------------------------------------------------------------
 
+DEVKITPRO=/opt/devkitpro
+DEVKITARM=/opt/devkitpro/devkitARM
+
 ifeq ($(strip $(DEVKITARM)),)
 $(error "Veuillez régler DEVKITARM dans votre environnement. export DEVKITARM = <chemin vers> devkitARM")
 endif
