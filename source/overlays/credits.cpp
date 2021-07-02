@@ -57,7 +57,7 @@ void Overlays::ShowCredits() {
 		Gui::DrawStringCentered(0, 218, 0.6f, TEXT_COLOR, Lang::get("CURRENT_VERSION") + std::string(V_STRING), 390, 0, font);
 
 		GFX::DrawBottom();
-		//GFX::DrawSprite(sprites_DarkStore_core_idx, 0, 0);
+		GFX::DrawSprite(sprites_DarkStore_core_idx, 0, 0);
 		C3D_FrameEnd(0);
 
 		hidScanInput();
