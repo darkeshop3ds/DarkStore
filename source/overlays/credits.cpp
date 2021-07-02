@@ -39,18 +39,14 @@ void Overlays::ShowCredits() {
 		C2D_TargetClear(Bottom, TRANSPARENT);
 
 		GFX::DrawTop();
-		//GFX::DrawSprite(sprites_DarkStore_idx, 240, 30);
 		Gui::DrawStringCentered(0, 1, 0.7f, TEXT_COLOR, "DarkStore - " + Lang::get("CREDITS"), 395, 0, font);
 
-		Gui::DrawString(10, 30, 0.5f, TEXT_COLOR, "- DarkStore Team", 0, 0, font);
-		Gui::DrawString(10, 50, 0.5f, TEXT_COLOR, "- " + Lang::get("FILES_HOSTING_ANONYKU"), 0, 0, font);
-		Gui::DrawString(10, 70, 0.5f, TEXT_COLOR, "- " + Lang::get("CITRA_BIGN_ICON"), 0, 0, font);
-		Gui::DrawString(10, 90, 0.5f, TEXT_COLOR, "- https://hshop.erista.me/", 0, 0, font);
-		Gui::DrawString(10, 110, 0.5f, TEXT_COLOR, "- https://icons8.com/", 0, 0, font);
-		Gui::DrawString(10, 130, 0.5f, TEXT_COLOR, "- Dhalian. : Images", 0, 0, font);
-		Gui::DrawString(10, 150, 0.5f, TEXT_COLOR, Lang::get("CONTRIBUTOR_TRANSLATORS"), 210, 0, font);
-		//Gui::DrawString(10, 197, 0.5f, TEXT_COLOR, Lang::get("WEBSITE"), 390, 0, font);
-		Gui::DrawString(10, 197, 0.5f, TEXT_COLOR, "Credits Are Not Up To Date & Are Probably Incorrect", 390, 0, font);
+		Gui::DrawString(10, 30, 0.5f, TEXT_COLOR, "- DarkStore Team For Everything Else(Possibly?)", 0, 0, font);
+		Gui::DrawString(10, 50, 0.5f, TEXT_COLOR, "- Ghost0159 For A Ton Of Work On The Application", 0, 0, font);
+		Gui::DrawString(10, 70, 0.5f, TEXT_COLOR, "- Universal-Updater Team For 98% Of The Work xD", 0, 0, font);
+		Gui::DrawString(10, 90, 0.5f, TEXT_COLOR, "- dillpickle.mp4 For GFX", 0, 0, font);
+		Gui::DrawString(10, 110, 0.5f, TEXT_COLOR, "- " + Lang::get("CONTRIBUTOR_TRANSLATORS"), 0, 0, font);
+		Gui::DrawString(10, 197, 0.5f, TEXT_COLOR, "These Credits May Be Inaccurate But Their The Best Of My Knowledge", 390, 0, font);
 
 		Gui::Draw_Rect(0, 215, 400, 25, BAR_COLOR);
 		Gui::Draw_Rect(0, 214, 400, 1, BAR_OUTL_COLOR);
