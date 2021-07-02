@@ -770,7 +770,7 @@ DSUpdate IsDSUpdateAvailable() {
 
 	CURL *hnd = curl_easy_init();
 
-	ret = setupContext(hnd, "https://api.github.com/repos/Dark98/DS-R/releases/latest");
+	ret = setupContext(hnd, "https://api.github.com/repos/DarkStore-3DS/DarkStore/releases/latest");
 	if (ret != 0) {
 		socExit();
 		free(result_buf);
@@ -879,7 +879,7 @@ void UpdateAction() {
 			if ((down & KEY_A) || (down & KEY_B) || (down & KEY_START) || (down & KEY_TOUCH)) confirmed = true;
 		}
 
-		if (ScriptUtils::downloadRelease("Dark98/DS-R", (is3DSX ? "DarkStore.3dsx" : "DarkStore.cia"),
+		if (ScriptUtils::downloadRelease("DarkStore-3DS/DarkStore", (is3DSX ? "DarkStore.3dsx" : "DarkStore.cia"),
 		(is3DSX ? _3dsxPath : "sdmc:/DarkStore.cia"),
 		false, Lang::get("DOWNLOADING_DARKSTORE")) == 0) {
 
@@ -1057,7 +1057,7 @@ std::string GetChangelog() {
 
 	CURL *hnd = curl_easy_init();
 
-	ret = setupContext(hnd, "https://api.github.com/repos/Dark98/DS-R/releases/latest");
+	ret = setupContext(hnd, "https://api.github.com/repos/DarkStore-3DS/DarkStore/releases/latest");
 	if (ret != 0) {
 		socExit();
 		free(result_buf);
