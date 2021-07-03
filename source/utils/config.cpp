@@ -121,6 +121,7 @@ Config::Config() {
 	if (this->json.contains("AutoUpdate")) this->autoupdate(this->getBool("AutoUpdate"));
 	if (this->json.contains("_3DSX_Path")) this->_3dsxPath(this->getString("_3DSX_Path"));
 	if (this->json.contains("NDS_Path")) this->ndsPath(this->getString("NDS_Path"));
+	if (this->json.contains("GBA_Path")) this->gbaPath(this->getString("GBA_Path"));
 	if (this->json.contains("Archive_Path")) this->archPath(this->getString("Archive_Path"));
 	if (this->json.contains("MetaData")) this->metadata(this->getBool("MetaData"));
 	if (this->json.contains("UpdateCheck")) this->updatecheck(this->getBool("UpdateCheck"));
@@ -145,6 +146,7 @@ void Config::save() {
 		this->setBool("AutoUpdate", this->autoupdate());
 		this->setString("_3DSX_Path", this->_3dsxPath());
 		this->setString("NDS_Path", this->ndsPath());
+		this->setString("GBA_Path", this->gbaPath());
 		this->setString("Archive_Path", this->archPath());
 		this->setBool("MetaData", this->metadata());
 		this->setBool("UpdateCheck", this->updatecheck());

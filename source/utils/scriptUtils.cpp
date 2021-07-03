@@ -53,6 +53,7 @@ Result ScriptUtils::removeFile(const std::string &file, const std::string &messa
 	out = std::regex_replace(file, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	out = std::regex_replace(out, std::regex("%3DSX%"), config->_3dsxPath());
 	out = std::regex_replace(out, std::regex("%NDS%"), config->ndsPath());
+	out = std::regex_replace(out, std::regex("%GBA%"), config->gbaPath());
 
 	Result ret = NONE;
 	if (access(out.c_str(), F_OK) != 0) return DELETE_ERROR;
@@ -92,9 +93,11 @@ Result ScriptUtils::copyFile(const std::string &source, const std::string &desti
 	_source = std::regex_replace(source, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	_source = std::regex_replace(_source, std::regex("%3DSX%"), config->_3dsxPath());
 	_source = std::regex_replace(_source, std::regex("%NDS%"), config->ndsPath());
+	_source = std::regex_replace(_source, std::regex("%GBA%"), config->gbaPath());
 	_dest = std::regex_replace(destination, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	_dest = std::regex_replace(_dest, std::regex("%3DSX%"), config->_3dsxPath());
 	_dest = std::regex_replace(_dest, std::regex("%NDS%"), config->ndsPath());
+	_dest = std::regex_replace(_dest, std::regex("%GBA%"), config->gbaPath());
 
 	if (isARG) {
 		snprintf(progressBarMsg, sizeof(progressBarMsg), message.c_str());
@@ -134,9 +137,11 @@ Result ScriptUtils::renameFile(const std::string &oldName, const std::string &ne
 	old = std::regex_replace(oldName, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	old = std::regex_replace(old, std::regex("%3DSX%"), config->_3dsxPath());
 	old = std::regex_replace(old, std::regex("%NDS%"), config->ndsPath());
+	old = std::regex_replace(old, std::regex("%GBA%"), config->gbaPath());
 	_new = std::regex_replace(newName, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	_new = std::regex_replace(_new, std::regex("%3DSX%"), config->_3dsxPath());
 	_new = std::regex_replace(_new, std::regex("%NDS%"), config->ndsPath());
+	_new = std::regex_replace(_new, std::regex("%GBA%"), config->gbaPath());
 
 	Msg::DisplayMsg(message);
 
@@ -153,6 +158,7 @@ Result ScriptUtils::downloadRelease(const std::string &repo, const std::string &
 	std::string out;
 	out = std::regex_replace(output, std::regex("%3DSX%"), config->_3dsxPath());
 	out = std::regex_replace(out, std::regex("%NDS%"), config->ndsPath());
+	out = std::regex_replace(out, std::regex("%GBA%"), config->gbaPath());
 	out = std::regex_replace(out, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 
 	Result ret = NONE;
@@ -196,6 +202,7 @@ Result ScriptUtils::downloadFile(const std::string &file, const std::string &out
 	std::string out;
 	out = std::regex_replace(output, std::regex("%3DSX%"), config->_3dsxPath());
 	out = std::regex_replace(out, std::regex("%NDS%"), config->ndsPath());
+	out = std::regex_replace(out, std::regex("%GBA%"), config->gbaPath());
 	out = std::regex_replace(out, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 
 	Result ret = NONE;
@@ -241,6 +248,7 @@ void ScriptUtils::installFile(const std::string &file, bool updatingSelf, const 
 	in = std::regex_replace(file, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	in = std::regex_replace(in, std::regex("%3DSX%"), config->_3dsxPath());
 	in = std::regex_replace(in, std::regex("%NDS%"), config->ndsPath());
+	in = std::regex_replace(in, std::regex("%GBA%"), config->gbaPath());
 
 	if (isARG) {
 		snprintf(progressBarMsg, sizeof(progressBarMsg), message.c_str());
@@ -272,6 +280,7 @@ void ScriptUtils::extractFile(const std::string &file, const std::string &input,
 	out = std::regex_replace(output, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	out = std::regex_replace(out, std::regex("%3DSX%"), config->_3dsxPath());
 	out = std::regex_replace(out, std::regex("%NDS%"), config->ndsPath());
+	out = std::regex_replace(out, std::regex("%GBA%"), config->gbaPath());
 
 	if (isARG) {
 		snprintf(progressBarMsg, sizeof(progressBarMsg), message.c_str());

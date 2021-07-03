@@ -62,7 +62,7 @@ static const Structs::ButtonPos back = { 44, 0, 24, 24 }; // Back arrow for dire
 
 
 static const std::vector<std::string> mainStrings = { "LANGUAGE", "SELECT_ESHOP", "AUTO_UPDATE_SETTINGS_BTN", "GUI_SETTINGS_BTN", "DIRECTORY_SETTINGS_BTN", "CREDITS", "EXIT_APP" };
-static const std::vector<std::string> dirStrings = { "CHANGE_3DSX_PATH", "CHANGE_NDS_PATH", "CHANGE_ARCHIVE_PATH", "CHANGE_SHORTCUT_PATH" };
+static const std::vector<std::string> dirStrings = { "CHANGE_3DSX_PATH", "CHANGE_NDS_PATH", "CHANGE_GBA_PATH", "CHANGE_ARCHIVE_PATH", "CHANGE_SHORTCUT_PATH" };
 
 /* Note: Украïнська is spelled using a latin i with dieresis to work in the system font */
 												   /* en 	|	 es		|	 fr		|   jp	 |	  de	 |	  it	 |	  pt	  |			pt-BR		   |	ru	  |	  cn-TR  |	 da	  |	    lt	  |	   pl	 |	 hu	   |	gr	   |	 uk		  |	  tr -*/
@@ -318,10 +318,14 @@ static void SettingsHandleDir(int &page, int &selection, const std::unique_ptr<S
 			if (path != "") config->ndsPath(path);
 
 		} else if (touching(touch, mainButtons[2])) {
+			const std::string path = Overlays::SelectDir(config->gbaPath(), Lang::get("SELECT_DIR"), store);
+			if (path != "") config->gbaPath(path);
+
+		} else if (touching(touch, mainButtons[3])) {
 			const std::string path = Overlays::SelectDir(config->archPath(), Lang::get("SELECT_DIR"), store);
 			if (path != "") config->archPath(path);
 
-		} else if (touching(touch, mainButtons[3])) {
+		} else if (touching(touch, mainButtons[4])) {
 			const std::string path = Overlays::SelectDir(config->shortcut(), Lang::get("SELECT_DIR"), store);
 			if (path != "") config->shortcut(path);
 		}
@@ -342,11 +346,16 @@ static void SettingsHandleDir(int &page, int &selection, const std::unique_ptr<S
 				break;
 
 			case 2:
+				path = Overlays::SelectDir(config->gbaPath(), Lang::get("SELECT_DIR"), store);
+				if (path != "") config->gbaPath(path);
+				break;
+
+			case 3:
 				path = Overlays::SelectDir(config->archPath(), Lang::get("SELECT_DIR"), store);
 				if (path != "") config->archPath(path);
 				break;
 
-			case 3:
+			case 4:
 				path = Overlays::SelectDir(config->shortcut(), Lang::get("SELECT_DIR"), store);
 				if (path != "") config->shortcut(path);
 				break;

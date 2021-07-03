@@ -61,6 +61,9 @@ public:
 	std::string ndsPath() const { return this->v_ndsPath; };
 	void ndsPath(const std::string &v) { this->v_ndsPath = v; if (!this->changesMade) this->changesMade = true; };
 
+	std::string gbaPath() const { return this->v_gbaPath; };
+	void gbaPath(const std::string &v) { this->v_gbaPath = v; if (!this->changesMade) this->changesMade = true; };
+
 	std::string archPath() const { return this->v_archivePath; };
 	void archPath(const std::string &v) { this->v_archivePath = v; if (!this->changesMade) this->changesMade = true; };
 
@@ -100,7 +103,7 @@ private:
 	bool changesMade = false;
 
 	std::string v_language = "en", v_lastStore = "darkstore-homebrew.eshop",
-				v_3dsxPath = "sdmc:/3ds", v_ndsPath = "sdmc:", v_archivePath = "sdmc:",
+				v_3dsxPath = "sdmc:/3ds", v_ndsPath = "sdmc:/roms/nds", v_gbaPath = "sdmc:/roms/gba", v_archivePath = "sdmc:",
 				v_shortcutPath = "sdmc:/3ds/DarkStore/shortcuts";
 
 	bool v_list = false, v_autoUpdate = true, v_metadata = true, v_updateCheck = true,
