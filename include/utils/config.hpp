@@ -114,7 +114,7 @@ private:
 	bool changesMade = false;
 
 	std::string v_language = "en", v_lastStore = "darkstore-homebrew.unistore",
-				v_3dsxPath = "sdmc:/3ds", v_ndsPath = "sdmc:", v_archivePath = "sdmc:",
+				v_3dsxPath = "sdmc:/3ds", v_ndsPath = "sdmc:/roms/nds", v_archivePath = "sdmc:",
 				v_shortcutPath = "sdmc:/3ds/DarkStore/shortcuts", v_firmPath = "sdmc:/luma/payloads", v_theme = "Default";
 
 	bool v_list = false, v_autoUpdate = true, v_metadata = true, v_updateCheck = true,
