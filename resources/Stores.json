@@ -1,0 +1,15 @@
+{
+	"DarkStore HomeBrew": {
+		"title": "DarkStore HomeBrew",
+		"author": "Dark98",
+		"url": "https://darkstore.ml/app/darkstore-homebrew.unistore",
+		"description": "DarkStore 3DS HomeBrew"
+	},
+	   "DarkStore-NDS":{
+       "title":"DarkStore-NDS",
+       "author":"Dark98",
+       "url":"https://darkstore.ml/app/darkstore-nds.unistore",
+       "description":"NDS Stuff"
+   }
+}
+

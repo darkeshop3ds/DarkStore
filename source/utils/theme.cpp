@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -71,7 +71,7 @@ nlohmann::json Theme::InitWithDefaultColors(const std::string &ThemePath) {
 			{ "MarkUnselected", "#1C213A" },
 			{ "DownListPrev", "#1C213A" },
 			{ "SideBarIconColor", "#ADCCEF" },
-			{ "Description", "Universal-Updater's default Theme.\n\nBy: Universal-Team" }
+			{ "Description", "DarkStore's default Theme.\n\nBy: Universal-Team" }
 		}}
 	};
 

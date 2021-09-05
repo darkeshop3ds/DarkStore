@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -210,7 +210,7 @@ static void DrawGUISettings(int selection) {
 	- Access the UniStore Manage Handle.
 	- Enable UniStore auto update on boot.
 	- Show the Credits.
-	- Exit Universal-Updater.
+	- Exit DarkStore.
 
 	int &page: Reference to the page.
 	bool &dspSettings: Reference to the display Settings.
@@ -426,7 +426,7 @@ static void SettingsHandleDir(int &page, int &selection) {
 	Here you can..
 
 	- Enable / Disable Automatically updating the UniStore on boot.
-	- Enable / Disable Automatically check for Universal-Updater updates on boot.
+	- Enable / Disable Automatically check for DarkStore updates on boot.
 
 	int &page: Reference to the page.
 	int &selection: Reference to the Selection.
@@ -575,8 +575,8 @@ static void LanguageLogic(int &page, int &selection, int &sPos) {
 
 		/* Check if language needs a custom font. */
 		if (l == "uk") {
-			if (access("sdmc:/3ds/Universal-Updater/font.bcfnt", F_OK) != 0) {
-				ScriptUtils::downloadFile("https://github.com/Universal-Team/extras/raw/master/files/universal-updater.bcfnt", "sdmc:/3ds/Universal-Updater/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"), true);
+			if (access("sdmc:/3ds/DarkStore/font.bcfnt", F_OK) != 0) {
+				ScriptUtils::downloadFile("https://github.com/Universal-Team/extras/raw/master/files/universal-updater.bcfnt", "sdmc:/3ds/DarkStore/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"), true);
 				Init::UnloadFont();
 			}
 
@@ -609,8 +609,8 @@ static void LanguageLogic(int &page, int &selection, int &sPos) {
 
 					/* Check if language needs a custom font. */
 					if (l == "uk") {
-						if (access("sdmc:/3ds/Universal-Updater/font.bcfnt", F_OK) != 0) {
-							ScriptUtils::downloadFile("https://github.com/Universal-Team/extras/raw/master/files/universal-updater.bcfnt", "sdmc:/3ds/Universal-Updater/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"), true);
+						if (access("sdmc:/3ds/DarkStore/font.bcfnt", F_OK) != 0) {
+							ScriptUtils::downloadFile("https://github.com/Universal-Team/extras/raw/master/files/universal-updater.bcfnt", "sdmc:/3ds/DarkStore/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"), true);
 							Init::UnloadFont();
 						}
 
@@ -641,7 +641,7 @@ static void LanguageLogic(int &page, int &selection, int &sPos) {
 
 		if (touching(touch, langButtons[6])) {
 			/* Download Font. */
-			ScriptUtils::downloadFile("https://github.com/Universal-Team/extras/raw/master/files/universal-updater.bcfnt", "sdmc:/3ds/Universal-Updater/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"), true);
+			ScriptUtils::downloadFile("https://github.com/Universal-Team/extras/raw/master/files/universal-updater.bcfnt", "sdmc:/3ds/DarkStore/font.bcfnt", Lang::get("DOWNLOADING_COMPATIBLE_FONT"), true);
 			config->customfont(true);
 			Init::UnloadFont();
 			Init::LoadFont();

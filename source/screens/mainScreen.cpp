@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -44,52 +44,52 @@ extern void DisplayChangelog();
 
 	Initialized meta, store and StoreEntry class and:
 
-	- Downloads Universal-DB.. in case nothing exist.
+	- Downloads DarkStore-HomeBrew.. in case nothing exist.
 */
 MainScreen::MainScreen() {
 	StoreUtils::meta = std::make_unique<Meta>();
 
 	/* Check if lastStore is accessible. */
-	if (config->lastStore() != "universal-db.unistore" && config->lastStore() != "") {
+	if (config->lastStore() != "darkstore-homebrew.unistore" && config->lastStore() != "") {
 		if (access((_STORE_PATH + config->lastStore()).c_str(), F_OK) != 0) {
-			config->lastStore("universal-db.unistore");
+			config->lastStore("darkstore-homebrew.unistore");
 
 		} else {
 			/* check version and file here. */
 			const UniStoreInfo info = GetInfo((_STORE_PATH + config->lastStore()), config->lastStore());
 
 			if (info.Version != 3 && info.Version != _UNISTORE_VERSION) {
-				config->lastStore("universal-db.unistore");
+				config->lastStore("darkstore-homebrew.unistore");
 			}
 
 			if (info.File != "") { // Ensure to check for this.
 				if ((info.File.find("/") != std::string::npos)) {
-					config->lastStore("universal-db.unistore"); // It does contain a '/' which is invalid.
+					config->lastStore("darkstore-homebrew.unistore"); // It does contain a '/' which is invalid.
 				}
 			}
 		}
 	}
 
 	/* If Universal DB --> Get! */
-	if (config->lastStore() == "universal-db.unistore" || config->lastStore() == "") {
-		if (access("sdmc:/3ds/Universal-Updater/stores/universal-db.unistore", F_OK) != 0) {
+	if (config->lastStore() == "darkstore-homebrew.unistore" || config->lastStore() == "") {
+		if (access("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.unistore", F_OK) != 0) {
 			if (checkWifiStatus()) {
 				std::string tmp = ""; // Just a temp.
-				DownloadUniStore("https://db.universal-team.net/unistore/universal-db.unistore", -1, tmp, true, true);
-				DownloadSpriteSheet("https://db.universal-team.net/unistore/universal-db.t3x", "universal-db.t3x");
+				DownloadUniStore("https://darkstore.ml/app/darkstore-homebrew.unistore", -1, tmp, true, true);
+				DownloadSpriteSheet("https://darkstore.ml/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
 
 			} else {
 				notConnectedMsg();
 			}
 
 		} else {
-			const UniStoreInfo info = GetInfo("sdmc:/3ds/Universal-Updater/stores/universal-db.unistore", "universal-db.unistore");
+			const UniStoreInfo info = GetInfo("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.unistore", "darkstore-homebrew.unistore");
 
 			if (info.Version != 3 && info.Version != _UNISTORE_VERSION) {
 				if (checkWifiStatus()) {
 					std::string tmp = ""; // Just a temp.
-					DownloadUniStore("https://db.universal-team.net/unistore/universal-db.unistore", -1, tmp, true, true);
-					DownloadSpriteSheet("https://db.universal-team.net/unistore/universal-db.t3x", "universal-db.t3x");
+					DownloadUniStore("https://darkstore.ml/app/darkstore-homebrew.unistore", -1, tmp, true, true);
+					DownloadSpriteSheet("https://darkstore.ml/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
 
 				} else {
 					notConnectedMsg();

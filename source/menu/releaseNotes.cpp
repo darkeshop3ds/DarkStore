@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -71,7 +71,7 @@ void StoreUtils::ReleaseNotesLogic(int &scrollIndex, int &storeMode) {
 /*
 	I place it temporarely here for now.
 
-	Display Release changelog for Universal-Updater.
+	Display Release changelog for DarkStore.
 */
 void DisplayChangelog() {
 	if (config->changelog()) {
@@ -93,7 +93,7 @@ void DisplayChangelog() {
 			Gui::DrawString(5, 25 - scrollIndex, 0.5f, UIThemes->TextColor(), notes, 390, 0, font, C2D_WordWrap);
 			Gui::Draw_Rect(0, 0, 400, 25, UIThemes->BarColor());
 			Gui::Draw_Rect(0, 25, 400, 1, UIThemes->BarOutline());
-			Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), "Universal-Updater", 390, 0, font);
+			Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), "DarkStore", 390, 0, font);
 			Gui::Draw_Rect(0, 215, 400, 25, UIThemes->BarColor());
 			Gui::Draw_Rect(0, 214, 400, 1, UIThemes->BarOutline());
 			Gui::DrawStringCentered(0, 217, 0.7f, UIThemes->TextColor(), C_V, 390, 0, font);

@@ -86,7 +86,7 @@ VERSION_MICRO := 0
 endif
 
 #---------------------------------------------------------------------------------
-TARGET		:=	Universal-Updater
+TARGET		:=	DarkStore
 BUILD		:=	build
 UNIVCORE	:=	Universal-Core
 SOURCES		:=	$(UNIVCORE) source source/download source/gui source/lang source/menu source/overlays \
@@ -97,8 +97,8 @@ INCLUDES	:=	$(UNIVCORE) include include/download include/gui include/lang includ
 GRAPHICS	:=	assets/gfx
 ROMFS		:=	romfs
 GFXBUILD	:=	$(ROMFS)/gfx
-APP_AUTHOR	:=	Universal-Team
-APP_DESCRIPTION :=	A simple 3DS homebrew updater
+APP_AUTHOR	:=	Dark98
+APP_DESCRIPTION :=	A simple 3DS software downloader
 ICON		:=	app/icon.png
 BNR_IMAGE	:=	app/banner.png
 BNR_AUDIO	:=	app/BannerAudio.wav
@@ -233,7 +233,10 @@ citra: $(BUILD) $(GFXBUILD) $(DEPSDIR) $(ROMFS_T3XFILES) $(T3XHFILES)
 #------------------------------------------------------------------------------
 clean:
 	@echo clean ...
+	@rm -fr $(BUILD) $(TARGET).3dsx
+	@rm -fr $(BUILD) $(TARGET).cia
 	@rm -fr $(BUILD) $(TARGET).elf
+	@rm -fr $(BUILD) $(TARGET).smdh
 	@rm -fr $(OUTDIR)
 
 

@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -33,8 +33,8 @@
 
 class Theme {
 public:
-	Theme(const std::string &ThemeJSON = "sdmc:/3ds/Universal-Updater/Themes.json");
-	nlohmann::json InitWithDefaultColors(const std::string &ThemePath = "sdmc:/3ds/Universal-Updater/Themes.json");
+	Theme(const std::string &ThemeJSON = "sdmc:/3ds/DarkStore/Themes.json");
+	nlohmann::json InitWithDefaultColors(const std::string &ThemePath = "sdmc:/3ds/DarkStore/Themes.json");
 	void LoadTheme(const std::string &ThemeName);
 	std::vector<std::pair<std::string, std::string>> ThemeNames();
 	uint32_t GetThemeColor(const std::string &ThemeName, const std::string &Key, const uint32_t DefaultColor);

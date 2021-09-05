@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -41,7 +41,7 @@ void Overlays::ShowCredits() {
 
 		GFX::DrawTop();
 		GFX::DrawSprite(sprites_universal_updater_idx, 220, 26);
-		Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), "Universal-Updater - " + Lang::get("CREDITS"), 395, 0, font);
+		Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), "DarkStore - " + Lang::get("CREDITS"), 395, 0, font);
 
 		Gui::DrawString(10, 30, 0.5f, UIThemes->TextColor(), "- Universal-Team", 0, 0, font);
 		Gui::DrawString(10, 50, 0.5f, UIThemes->TextColor(), "- devkitPro", 0, 0, font);

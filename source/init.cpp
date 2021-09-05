@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -57,10 +57,10 @@ static void getCurrentUsage(){
 */
 static void InitMusic() {
 	if (access("sdmc:/3ds/dspfirm.cdc", F_OK) == 0) { // Ensure dspfirm dump exist.
-		if (access("sdmc:/3ds/Universal-Updater/music.wav", F_OK) == 0) { // Ensure music.wav exist.
+		if (access("sdmc:/3ds/DarkStore/music.wav", F_OK) == 0) { // Ensure music.wav exist.
 			dspfirmFound = true;
 			ndspInit();
-			Music = std::make_unique<Sound>("sdmc:/3ds/Universal-Updater/music.wav");
+			Music = std::make_unique<Sound>("sdmc:/3ds/DarkStore/music.wav");
 
 			Music->play();
 		}
@@ -95,8 +95,8 @@ bool touching(touchPosition touch, Structs::ButtonPos button) {
 void Init::LoadFont() {
 	if (config->customfont()) {
 		if (!needUnloadFont) {
-			if (access("sdmc:/3ds/Universal-Updater/font.bcfnt", F_OK) == 0) {
-				Gui::loadFont(font, "sdmc:/3ds/Universal-Updater/font.bcfnt");
+			if (access("sdmc:/3ds/DarkStore/font.bcfnt", F_OK) == 0) {
+				Gui::loadFont(font, "sdmc:/3ds/DarkStore/font.bcfnt");
 				needUnloadFont = true;
 			}
 		}
@@ -115,7 +115,7 @@ void Init::UnloadFont() {
 }
 
 /*
-	Initialize Universal-Updater.
+	Initialize DarkStore.
 */
 Result Init::Initialize() {
 	gfxInitDefault();
@@ -128,9 +128,9 @@ Result Init::Initialize() {
 
 	/* Create Directories, if missing. */
 	mkdir("sdmc:/3ds", 0777);
-	mkdir("sdmc:/3ds/Universal-Updater", 0777);
-	mkdir("sdmc:/3ds/Universal-Updater/stores", 0777);
-	mkdir("sdmc:/3ds/Universal-Updater/shortcuts", 0777);
+	mkdir("sdmc:/3ds/DarkStore", 0777);
+	mkdir("sdmc:/3ds/DarkStore/stores", 0777);
+	mkdir("sdmc:/3ds/DarkStore/shortcuts", 0777);
 
 	config = std::make_unique<Config>();
 	UIThemes = std::make_unique<Theme>();
@@ -172,7 +172,7 @@ Result Init::Initialize() {
 }
 
 /*
-	MainLoop of Universal-Updater.
+	MainLoop of DarkStore.
 */
 Result Init::MainLoop() {
 	bool fullExit = false;
@@ -212,7 +212,7 @@ Result Init::MainLoop() {
 }
 
 /*
-	Exit Universal-Updater.
+	Exit DarkStore.
 */
 Result Init::Exit() {
 	Gui::exit();

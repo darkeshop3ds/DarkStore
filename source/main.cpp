@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -44,9 +44,9 @@ static void InitForARG() {
 
 	/* Create Directories, if missing. */
 	mkdir("sdmc:/3ds", 0777);
-	mkdir("sdmc:/3ds/Universal-Updater", 0777);
-	mkdir("sdmc:/3ds/Universal-Updater/stores", 0777);
-	mkdir("sdmc:/3ds/Universal-Updater/shortcuts", 0777);
+	mkdir("sdmc:/3ds/DarkStore", 0777);
+	mkdir("sdmc:/3ds/DarkStore/stores", 0777);
+	mkdir("sdmc:/3ds/DarkStore/shortcuts", 0777);
 
 	config = std::make_unique<Config>();
 	UIThemes = std::make_unique<Theme>();

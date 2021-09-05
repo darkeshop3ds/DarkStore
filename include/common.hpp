@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -35,8 +35,8 @@
 #include <3ds.h>
 #include <vector>
 
-#define _STORE_PATH "sdmc:/3ds/Universal-Updater/stores/"
-#define _META_PATH "sdmc:/3ds/Universal-Updater/MetaData.json"
+#define _STORE_PATH "sdmc:/3ds/DarkStore/stores/"
+#define _META_PATH "sdmc:/3ds/DarkStore/MetaData.json"
 #define _THEME_AMOUNT 2
 #define _UNISTORE_VERSION 4
 

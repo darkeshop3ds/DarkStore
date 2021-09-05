@@ -1,5 +1,5 @@
 /*
-*   This file is part of Universal-Updater
+*   This file is part of DarkStore
 *   Copyright (C) 2019-2021 Universal-Team
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -795,7 +795,7 @@ UUUpdate IsUUUpdateAvailable() {
 
 	CURL *hnd = curl_easy_init();
 
-	ret = setupContext(hnd, "https://api.github.com/repos/Universal-Team/Universal-Updater/releases/latest");
+	ret = setupContext(hnd, "https://api.github.com/repos/DarkStore-3DS/DarkStore/releases/latest");
 	if (ret != 0) {
 		socExit();
 		free(result_buf);
@@ -877,7 +877,7 @@ void UpdateAction() {
 			Gui::DrawString(5, 25 - scrollIndex, 0.5f, UIThemes->TextColor(), res.Notes, 390, 0, font, C2D_WordWrap);
 			Gui::Draw_Rect(0, 0, 400, 25, UIThemes->BarColor());
 			Gui::Draw_Rect(0, 25, 400, 1, UIThemes->BarOutline());
-			Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), "Universal-Updater", 390, 0, font);
+			Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), "DarkStore", 390, 0, font);
 			Gui::Draw_Rect(0, 215, 400, 25, UIThemes->BarColor());
 			Gui::Draw_Rect(0, 214, 400, 1, UIThemes->BarOutline());
 			Gui::DrawStringCentered(0, 217, 0.7f, UIThemes->TextColor(), res.Version, 390, 0, font);
@@ -904,8 +904,8 @@ void UpdateAction() {
 			if ((down & KEY_A) || (down & KEY_B) || (down & KEY_START) || (down & KEY_TOUCH)) confirmed = true;
 		}
 
-		if (ScriptUtils::downloadRelease("Universal-Team/Universal-Updater", (is3DSX ? "Universal-Updater.3dsx" : "Universal-Updater.cia"),
-		(is3DSX ? _3dsxPath : "sdmc:/Universal-Updater.cia"),
+		if (ScriptUtils::downloadRelease("DarkStore-3DS/DarkStore", (is3DSX ? "DarkStore.3dsx" : "DarkStore.cia"),
+		(is3DSX ? _3dsxPath : "sdmc:/DarkStore.cia"),
 		false, Lang::get("DONLOADING_UNIVERSAL_UPDATER"), true) == 0) {
 
 			if (is3DSX) {
@@ -914,8 +914,8 @@ void UpdateAction() {
 				return;
 			}
 
-			ScriptUtils::installFile("sdmc:/Universal-Updater.cia", false, Lang::get("INSTALL_UNIVERSAL_UPDATER"), true);
-			ScriptUtils::removeFile("sdmc:/Universal-Updater.cia", Lang::get("DELETE_UNNEEDED_FILE"), true);
+			ScriptUtils::installFile("sdmc:/DarkStore.cia", false, Lang::get("INSTALL_UNIVERSAL_UPDATER"), true);
+			ScriptUtils::removeFile("sdmc:/DarkStore.cia", Lang::get("DELETE_UNNEEDED_FILE"), true);
 			Msg::waitMsg(Lang::get("UPDATE_DONE"));
 			exiting = true;
 		}
@@ -953,7 +953,7 @@ std::vector<StoreList> FetchStores() {
 
 	CURL *hnd = curl_easy_init();
 
-	ret = setupContext(hnd, "https://github.com/Universal-Team/Universal-Updater/raw/master/resources/UniStores.json");
+	ret = setupContext(hnd, "https://darkstore.ml/app/Stores.json");
 	if (ret != 0) {
 		socExit();
 		free(result_buf);
@@ -1082,7 +1082,7 @@ std::string GetChangelog() {
 
 	CURL *hnd = curl_easy_init();
 
-	ret = setupContext(hnd, "https://api.github.com/repos/Universal-Team/Universal-Updater/releases/latest");
+	ret = setupContext(hnd, "https://api.github.com/repos/DarkStore-3DS/DarkStore/releases/latest");
 	if (ret != 0) {
 		socExit();
 		free(result_buf);
