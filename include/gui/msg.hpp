@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_MSG_HPP
-#define _UNIVERSAL_UPDATER_MSG_HPP
+#ifndef _DARKSTORE_MSG_HPP
+#define _DARKSTORE_MSG_HPP
 
 #include <string>
 

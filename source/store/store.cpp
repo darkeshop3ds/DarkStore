@@ -38,8 +38,8 @@ static bool firstStart = true;
 /*
 	Initialize a Store.
 
-	const std::string &file: The UniStore file.
-	const std::string &file2: The UniStore file.. without full path.
+	const std::string &file: The Store file.
+	const std::string &file2: The Store file.. without full path.
 	bool ARGMode: If Argument mode.
 */
 Store::Store(const std::string &file, const std::string &file2, bool ARGMode) {
@@ -62,7 +62,7 @@ Store::Store(const std::string &file, const std::string &file2, bool ARGMode) {
 };
 
 /*
-	Update an UniStore, including SpriteSheet, if revision increased.
+	Update an Store, including SpriteSheet, if revision increased.
 
 	const std::string &file: Const Reference to the fileName.
 */
@@ -100,7 +100,7 @@ void Store::update(const std::string &file) {
 
 							if (URL != "") {
 								std::string tmp = "";
-								doSheet = DownloadUniStore(URL, rev, tmp);
+								doSheet = DownloadStore(URL, rev, tmp);
 							}
 
 						} else {
@@ -218,9 +218,9 @@ void Store::loadSheets() {
 
 
 /*
-	Load a UniStore from a file.
+	Load a Store from a file.
 
-	const std::string &file: The file of the UniStore.
+	const std::string &file: The file of the Store.
 */
 void Store::LoadFromFile(const std::string &file) {
 	FILE *in = fopen(file.c_str(), "rt");
@@ -237,22 +237,22 @@ void Store::LoadFromFile(const std::string &file) {
 	/* Check, if valid. */
 	if (this->storeJson.contains("storeInfo") && this->storeJson.contains("storeContent")) {
 		if (this->storeJson["storeInfo"].contains("version") && this->storeJson["storeInfo"]["version"].is_number()) {
-			if (this->storeJson["storeInfo"]["version"] < 3) Msg::waitMsg(Lang::get("UNISTORE_TOO_OLD"));
-			else if (this->storeJson["storeInfo"]["version"] > _UNISTORE_VERSION) Msg::waitMsg(Lang::get("UNISTORE_TOO_NEW"));
-			else if (this->storeJson["storeInfo"]["version"] == 3 || this->storeJson["storeInfo"]["version"] == _UNISTORE_VERSION) {
+			if (this->storeJson["storeInfo"]["version"] < 3) Msg::waitMsg(Lang::get("STORE_TOO_OLD"));
+			else if (this->storeJson["storeInfo"]["version"] > _STORE_VERSION) Msg::waitMsg(Lang::get("STORE_TOO_NEW"));
+			else if (this->storeJson["storeInfo"]["version"] == 3 || this->storeJson["storeInfo"]["version"] == _STORE_VERSION) {
 				this->valid = true;
 			}
 		}
 
 	} else {
-		Msg::waitMsg(Lang::get("UNISTORE_INVALID_ERROR"));
+		Msg::waitMsg(Lang::get("STORE_INVALID_ERROR"));
 	}
 }
 
 /*
-	Return the Title of the UniStore.
+	Return the Title of the Store.
 */
-std::string Store::GetUniStoreTitle() const {
+std::string Store::GetStoreTitle() const {
 	if (this->valid) {
 		if (this->storeJson["storeInfo"].contains("title")) return this->storeJson["storeInfo"]["title"];
 	}

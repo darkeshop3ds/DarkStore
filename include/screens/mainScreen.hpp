@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_MAIN_SCREEN_HPP
-#define _UNIVERSAL_UPDATER_MAIN_SCREEN_HPP
+#ifndef _DARKSTORE_MAIN_SCREEN_HPP
+#define _DARKSTORE_MAIN_SCREEN_HPP
 
 #include "common.hpp"
 #include "store.hpp"

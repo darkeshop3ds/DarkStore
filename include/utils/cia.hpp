@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_CIA_HPP
-#define _UNIVERSAL_UPDATER_CIA_HPP
+#ifndef _DARKSTORE_CIA_HPP
+#define _DARKSTORE_CIA_HPP
 
 #include "common.hpp"
 

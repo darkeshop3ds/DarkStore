@@ -73,7 +73,7 @@ void Meta::ImportMetadata() {
 	if (oldJson.is_discarded())
 		oldJson = { };
 
-	std::vector<UniStoreInfo> info = GetUniStoreInfo(_STORE_PATH); // Fetch UniStores.
+	std::vector<StoreInfo> info = GetStoreInfo(_STORE_PATH); // Fetch Stores.
 
 	for (int i = 0; i < (int)info.size(); i++) {
 		if (info[i].Title != "" && oldJson.contains(info[i].FileName)) {
@@ -89,49 +89,49 @@ void Meta::ImportMetadata() {
 /*
 	Get Last Updated.
 
-	const std::string &unistoreName: The UniStore name.
+	const std::string &storeName: The Store name.
 	const std::string &entry: The Entry name.
 */
-std::string Meta::GetUpdated(const std::string &unistoreName, const std::string &entry) const {
-	if (!this->metadataJson.contains(unistoreName)) return ""; // UniStore Name does not exist.
+std::string Meta::GetUpdated(const std::string &storeName, const std::string &entry) const {
+	if (!this->metadataJson.contains(storeName)) return ""; // Store Name does not exist.
 
-	if (!this->metadataJson[unistoreName].contains(entry)) return ""; // Entry does not exist.
+	if (!this->metadataJson[storeName].contains(entry)) return ""; // Entry does not exist.
 
-	if (!this->metadataJson[unistoreName][entry].contains("updated")) return ""; // updated does not exist.
+	if (!this->metadataJson[storeName][entry].contains("updated")) return ""; // updated does not exist.
 
-	if (this->metadataJson[unistoreName][entry]["updated"].is_string()) return this->metadataJson[unistoreName][entry]["updated"];
+	if (this->metadataJson[storeName][entry]["updated"].is_string()) return this->metadataJson[storeName][entry]["updated"];
 	return "";
 }
 
 /*
 	Get the marks.
 
-	const std::string &unistoreName: The UniStore name.
+	const std::string &storeName: The Store name.
 	const std::string &entry: The Entry name.
 */
-int Meta::GetMarks(const std::string &unistoreName, const std::string &entry) const {
+int Meta::GetMarks(const std::string &storeName, const std::string &entry) const {
 	int temp = 0;
 
-	if (!this->metadataJson.contains(unistoreName)) return temp; // UniStore Name does not exist.
+	if (!this->metadataJson.contains(storeName)) return temp; // Store Name does not exist.
 
-	if (!this->metadataJson[unistoreName].contains(entry)) return temp; // Entry does not exist.
+	if (!this->metadataJson[storeName].contains(entry)) return temp; // Entry does not exist.
 
-	if (!this->metadataJson[unistoreName][entry].contains("marks")) return temp; // marks does not exist.
+	if (!this->metadataJson[storeName][entry].contains("marks")) return temp; // marks does not exist.
 
-	if (this->metadataJson[unistoreName][entry]["marks"].is_number()) return this->metadataJson[unistoreName][entry]["marks"];
+	if (this->metadataJson[storeName][entry]["marks"].is_number()) return this->metadataJson[storeName][entry]["marks"];
 	return temp;
 }
 
 /*
 	Return, if update available.
 
-	const std::string &unistoreName: The UniStore name.
+	const std::string &storeName: The Store name.
 	const std::string &entry: The Entry name.
 	const std::string &updated: Compare for the update.
 */
-bool Meta::UpdateAvailable(const std::string &unistoreName, const std::string &entry, const std::string &updated) const {
-	if (this->GetUpdated(unistoreName, entry) != "" && updated != "") {
-		return strcasecmp(updated.c_str(), this->GetUpdated(unistoreName, entry).c_str()) > 0;
+bool Meta::UpdateAvailable(const std::string &storeName, const std::string &entry, const std::string &updated) const {
+	if (this->GetUpdated(storeName, entry) != "" && updated != "") {
+		return strcasecmp(updated.c_str(), this->GetUpdated(storeName, entry).c_str()) > 0;
 	}
 
 	return false;
@@ -140,17 +140,17 @@ bool Meta::UpdateAvailable(const std::string &unistoreName, const std::string &e
 /*
 	Get the marks.
 
-	const std::string &unistoreName: The UniStore name.
+	const std::string &storeName: The Store name.
 	const std::string &entry: The Entry name.
 */
-std::vector<std::string> Meta::GetInstalled(const std::string &unistoreName, const std::string &entry) const {
-	if (!this->metadataJson.contains(unistoreName)) return { }; // UniStore Name does not exist.
+std::vector<std::string> Meta::GetInstalled(const std::string &storeName, const std::string &entry) const {
+	if (!this->metadataJson.contains(storeName)) return { }; // Store Name does not exist.
 
-	if (!this->metadataJson[unistoreName].contains(entry)) return { }; // Entry does not exist.
+	if (!this->metadataJson[storeName].contains(entry)) return { }; // Entry does not exist.
 
-	if (!this->metadataJson[unistoreName][entry].contains("installed")) return { }; // marks does not exist.
+	if (!this->metadataJson[storeName][entry].contains("installed")) return { }; // marks does not exist.
 
-	if (this->metadataJson[unistoreName][entry]["installed"].is_array()) return this->metadataJson[unistoreName][entry]["installed"];
+	if (this->metadataJson[storeName][entry]["installed"].is_array()) return this->metadataJson[storeName][entry]["installed"];
 	return { };
 }
 

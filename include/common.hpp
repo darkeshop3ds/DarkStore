@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_COMMON_HPP
-#define _UNIVERSAL_UPDATER_COMMON_HPP
+#ifndef _DARKSTORE_COMMON_HPP
+#define _DARKSTORE_COMMON_HPP
 
 #include "config.hpp"
 #include "gfx.hpp"
@@ -38,7 +38,7 @@
 #define _STORE_PATH "sdmc:/3ds/DarkStore/stores/"
 #define _META_PATH "sdmc:/3ds/DarkStore/MetaData.json"
 #define _THEME_AMOUNT 2
-#define _UNISTORE_VERSION 4
+#define _STORE_VERSION 4
 
 inline std::unique_ptr<Config> config;
 inline uint32_t hRepeat, hDown, hHeld;

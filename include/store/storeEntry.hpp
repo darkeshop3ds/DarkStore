@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_STORE_ENTRY_HPP
-#define _UNIVERSAL_UPDATER_STORE_ENTRY_HPP
+#ifndef _DARKSTORE_STORE_ENTRY_HPP
+#define _DARKSTORE_STORE_ENTRY_HPP
 
 #include "meta.hpp"
 #include "store.hpp"

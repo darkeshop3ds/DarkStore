@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_CONFIG_HPP
-#define _UNIVERSAL_UPDATER_CONFIG_HPP
+#ifndef _DARKSTORE_CONFIG_HPP
+#define _DARKSTORE_CONFIG_HPP
 
 #include "json.hpp"
 
@@ -74,11 +74,11 @@ public:
 	bool metadata() const { return this->v_metadata; };
 	void metadata(bool v) { this->v_metadata = v; if (!this->changesMade) this->changesMade = true; };
 
-	/* U-U Update check on startup. */
+	/* DarkStore Update check on startup. */
 	bool updatecheck() const { return this->v_updateCheck; };
 	void updatecheck(bool v) { this->v_updateCheck = v; if (!this->changesMade) this->changesMade = true; };
 
-	/* U-U Update check on startup. */
+	/* DarkStore Update check on startup. */
 	bool usebg() const { return this->v_showBg; };
 	void usebg(bool v) { this->v_showBg = v; if (!this->changesMade) this->changesMade = true; };
 

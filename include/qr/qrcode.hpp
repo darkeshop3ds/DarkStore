@@ -50,8 +50,8 @@
  *         reasonable ways as different from the original version.
  */
 
-#ifndef _UNIVERSAL_UPDATER_QR_CODE_HPP
-#define _UNIVERSAL_UPDATER_QR_CODE_HPP
+#ifndef _DARKSTORE_QR_CODE_HPP
+#define _DARKSTORE_QR_CODE_HPP
 
 #include "common.hpp"
 #include "quirc.hpp"

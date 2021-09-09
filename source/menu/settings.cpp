@@ -81,7 +81,7 @@ static const Structs::ButtonPos back = { 45, 0, 24, 24 }; // Back arrow for dire
 static const Structs::ButtonPos Theme = { 40, 196, 280, 24 }; // Themes.
 
 
-static const std::vector<std::string> mainStrings = { "LANGUAGE", "SELECT_UNISTORE", "AUTO_UPDATE_SETTINGS_BTN", "GUI_SETTINGS_BTN", "DIRECTORY_SETTINGS_BTN", "CREDITS", "EXIT_APP" };
+static const std::vector<std::string> mainStrings = { "LANGUAGE", "SELECT_STORE", "AUTO_UPDATE_SETTINGS_BTN", "GUI_SETTINGS_BTN", "DIRECTORY_SETTINGS_BTN", "CREDITS", "EXIT_APP" };
 static const std::vector<std::string> dirStrings = { "CHANGE_3DSX_PATH", "3DSX_IN_FOLDER", "CHANGE_NDS_PATH", "CHANGE_ARCHIVE_PATH", "CHANGE_SHORTCUT_PATH", "CHANGE_FIRM_PATH" };
 extern std::vector<std::pair<std::string, std::string>> Themes;
 
@@ -163,14 +163,14 @@ static void DrawAutoUpdate(int selection) {
 
 	/* Toggle Boxes. */
 	Gui::Draw_Rect(40, 44, 280, 24, (selection == 0 ? UIThemes->MarkSelected() : UIThemes->MarkUnselected()));
-	Gui::DrawString(47, 48, 0.5f, UIThemes->TextColor(), Lang::get("AUTO_UPDATE_UNISTORE"), 210, 0, font);
+	Gui::DrawString(47, 48, 0.5f, UIThemes->TextColor(), Lang::get("AUTO_UPDATE_STORE"), 210, 0, font);
 	GFX::DrawToggle(toggleAbles[0].x, toggleAbles[0].y, config->autoupdate());
-	Gui::DrawString(47, 75, 0.4f, UIThemes->TextColor(), Lang::get("AUTO_UPDATE_UNISTORE_DESC"), 265, 0, font, C2D_WordWrap);
+	Gui::DrawString(47, 75, 0.4f, UIThemes->TextColor(), Lang::get("AUTO_UPDATE_STORE_DESC"), 265, 0, font, C2D_WordWrap);
 
 	Gui::Draw_Rect(40, 120, 280, 24, (selection == 1 ? UIThemes->MarkSelected() : UIThemes->MarkUnselected()));
-	Gui::DrawString(47, 124, 0.5f, UIThemes->TextColor(), Lang::get("AUTO_UPDATE_UU"), 210, 0, font);
+	Gui::DrawString(47, 124, 0.5f, UIThemes->TextColor(), Lang::get("AUTO_UPDATE_DS"), 210, 0, font);
 	GFX::DrawToggle(toggleAbles[1].x, toggleAbles[1].y, config->updatecheck());
-	Gui::DrawString(47, 151, 0.4f, UIThemes->TextColor(), Lang::get("AUTO_UPDATE_UU_DESC"), 265, 0, font, C2D_WordWrap);
+	Gui::DrawString(47, 151, 0.4f, UIThemes->TextColor(), Lang::get("AUTO_UPDATE_DS_DESC"), 265, 0, font, C2D_WordWrap);
 }
 
 /*
@@ -186,9 +186,9 @@ static void DrawGUISettings(int selection) {
 	Gui::DrawStringCentered(20, 2, 0.6, UIThemes->TextColor(), Lang::get("GUI_SETTINGS"), 248, 0, font);
 
 	Gui::Draw_Rect(40, 44, 280, 24, (selection == 0 ? UIThemes->MarkSelected() : UIThemes->MarkUnselected()));
-	Gui::DrawString(47, 48, 0.5f, UIThemes->TextColor(), Lang::get("UNISTORE_BG"), 210, 0, font);
+	Gui::DrawString(47, 48, 0.5f, UIThemes->TextColor(), Lang::get("STORE_BG"), 210, 0, font);
 	GFX::DrawToggle(toggleAbles[0].x, toggleAbles[0].y, config->usebg());
-	Gui::DrawString(47, 75, 0.4f, UIThemes->TextColor(), Lang::get("UNISTORE_BG_DESC"), 265, 0, font, C2D_WordWrap);
+	Gui::DrawString(47, 75, 0.4f, UIThemes->TextColor(), Lang::get("STORE_BG_DESC"), 265, 0, font, C2D_WordWrap);
 
 	Gui::Draw_Rect(40, 120, 280, 24, (selection == 1 ? UIThemes->MarkSelected() : UIThemes->MarkUnselected()));
 	Gui::DrawString(47, 124, 0.5f, UIThemes->TextColor(), Lang::get("CUSTOM_FONT"), 210, 0, font);
@@ -207,8 +207,8 @@ static void DrawGUISettings(int selection) {
 	Here you can..
 
 	- Change the Language.
-	- Access the UniStore Manage Handle.
-	- Enable UniStore auto update on boot.
+	- Access the Store Manage Handle.
+	- Enable Store auto update on boot.
 	- Show the Credits.
 	- Exit DarkStore.
 
@@ -425,7 +425,7 @@ static void SettingsHandleDir(int &page, int &selection) {
 
 	Here you can..
 
-	- Enable / Disable Automatically updating the UniStore on boot.
+	- Enable / Disable Automatically updating the Store on boot.
 	- Enable / Disable Automatically check for DarkStore updates on boot.
 
 	int &page: Reference to the page.

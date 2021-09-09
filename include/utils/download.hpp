@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_DOWNLOAD_HPP
-#define _UNIVERSAL_UPDATER_DOWNLOAD_HPP
+#ifndef _DARKSTORE_DOWNLOAD_HPP
+#define _DARKSTORE_DOWNLOAD_HPP
 
 #include "common.hpp"
 
@@ -48,7 +48,7 @@ struct StoreList {
 	std::string Description;
 };
 
-struct UUUpdate {
+struct DSUpdate {
 	bool Available = false;
 	std::string Notes = "";
 	std::string Version = "";
@@ -79,9 +79,9 @@ void notImplemented(void);
 void doneMsg(void);
 
 bool IsUpdateAvailable(const std::string &URL, int revCurrent);
-bool DownloadUniStore(const std::string &URL, int currentRev, std::string &fl, bool isDownload = false, bool isUDB = false);
+bool DownloadStore(const std::string &URL, int currentRev, std::string &fl, bool isDownload = false, bool isDS = false);
 bool DownloadSpriteSheet(const std::string &URL, const std::string &file);
-UUUpdate IsUUUpdateAvailable();
+DSUpdate IsDSUpdateAvailable();
 void UpdateAction();
 std::vector<StoreList> FetchStores();
 C2D_Image FetchScreenshot(const std::string &URL);

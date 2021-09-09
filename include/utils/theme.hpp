@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_THEME_HPP
-#define _UNIVERSAL_UPDATER_THEME_HPP
+#ifndef _DARKSTORE_THEME_HPP
+#define _DARKSTORE_THEME_HPP
 
 #include "json.hpp"
 #include <citro2d.h>

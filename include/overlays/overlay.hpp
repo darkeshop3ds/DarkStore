@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_OVERLAY_HPP
-#define _UNIVERSAL_UPDATER_OVERLAY_HPP
+#ifndef _DARKSTORE_OVERLAY_HPP
+#define _DARKSTORE_OVERLAY_HPP
 
 #include "common.hpp"
 #include <3ds.h>

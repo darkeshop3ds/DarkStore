@@ -35,7 +35,7 @@
 
 extern int fadeAlpha;
 
-extern UniStoreInfo GetInfo(const std::string &file, const std::string &fileName);
+extern StoreInfo GetInfo(const std::string &file, const std::string &fileName);
 extern void notConnectedMsg();
 extern void DisplayChangelog();
 
@@ -56,9 +56,9 @@ MainScreen::MainScreen() {
 
 		} else {
 			/* check version and file here. */
-			const UniStoreInfo info = GetInfo((_STORE_PATH + config->lastStore()), config->lastStore());
+			const StoreInfo info = GetInfo((_STORE_PATH + config->lastStore()), config->lastStore());
 
-			if (info.Version != 3 && info.Version != _UNISTORE_VERSION) {
+			if (info.Version != 3 && info.Version != _STORE_VERSION) {
 				config->lastStore("darkstore-homebrew.unistore");
 			}
 
@@ -75,7 +75,7 @@ MainScreen::MainScreen() {
 		if (access("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.unistore", F_OK) != 0) {
 			if (checkWifiStatus()) {
 				std::string tmp = ""; // Just a temp.
-				DownloadUniStore("https://darkstore.ml/app/darkstore-homebrew.unistore", -1, tmp, true, true);
+				DownloadStore("https://darkstore.ml/app/darkstore-homebrew.unistore", -1, tmp, true, true);
 				DownloadSpriteSheet("https://darkstore.ml/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
 
 			} else {
@@ -83,12 +83,12 @@ MainScreen::MainScreen() {
 			}
 
 		} else {
-			const UniStoreInfo info = GetInfo("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.unistore", "darkstore-homebrew.unistore");
+			const StoreInfo info = GetInfo("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.unistore", "darkstore-homebrew.unistore");
 
-			if (info.Version != 3 && info.Version != _UNISTORE_VERSION) {
+			if (info.Version != 3 && info.Version != _STORE_VERSION) {
 				if (checkWifiStatus()) {
 					std::string tmp = ""; // Just a temp.
-					DownloadUniStore("https://darkstore.ml/app/darkstore-homebrew.unistore", -1, tmp, true, true);
+					DownloadStore("https://darkstore.ml/app/darkstore-homebrew.unistore", -1, tmp, true, true);
 					DownloadSpriteSheet("https://darkstore.ml/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
 
 				} else {
@@ -125,8 +125,8 @@ void MainScreen::Draw(void) const {
 	Gui::Draw_Rect(0, 0, 400, 25, UIThemes->BarColor());
 	Gui::Draw_Rect(0, 25, 400, 1, UIThemes->BarOutline());
 
-	if (StoreUtils::store && StoreUtils::store->GetValid()) Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), StoreUtils::store->GetUniStoreTitle(), 360, 0, font);
-	else Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), Lang::get("INVALID_UNISTORE"), 370, 0, font);
+	if (StoreUtils::store && StoreUtils::store->GetValid()) Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), StoreUtils::store->GetStoreTitle(), 360, 0, font);
+	else Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), Lang::get("INVALID_STORE"), 370, 0, font);
 	config->list() ? StoreUtils::DrawList() : StoreUtils::DrawGrid();
 	GFX::DrawTime();
 	GFX::DrawBattery();
@@ -237,7 +237,7 @@ void MainScreen::Logic(u32 hDown, u32 hHeld, touchPosition touch) {
 			this->dwnldSizes.clear();
 
 			if (StoreUtils::store && StoreUtils::store->GetValid()) {
-				const std::vector<std::string> installedNames = StoreUtils::meta->GetInstalled(StoreUtils::store->GetUniStoreTitle(), StoreUtils::entries[StoreUtils::store->GetEntry()]->GetTitle());
+				const std::vector<std::string> installedNames = StoreUtils::meta->GetInstalled(StoreUtils::store->GetStoreTitle(), StoreUtils::entries[StoreUtils::store->GetEntry()]->GetTitle());
 				StoreUtils::store->SetDownloadIndex(0); // Reset to 0.
 				StoreUtils::store->SetDownloadSIndex(0);
 

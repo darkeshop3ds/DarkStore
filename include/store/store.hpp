@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_STORE_HPP
-#define _UNIVERSAL_UPDATER_STORE_HPP
+#ifndef _DARKSTORE_STORE_HPP
+#define _DARKSTORE_STORE_HPP
 
 #include "json.hpp"
 #include <citro2d.h>
@@ -40,11 +40,11 @@ public:
 	void unloadSheets();
 	void update(const std::string &file);
 
-	/* Get Information of the UniStore itself. */
-	std::string GetUniStoreTitle() const;
-	std::string GetUniStoreAuthor() const;
+	/* Get Information of the Store itself. */
+	std::string GetStoreTitle() const;
+	std::string GetStoreAuthor() const;
 
-	/* Get Information of the UniStore entries. */
+	/* Get Information of the SStore entries. */
 	std::string GetTitleEntry(int index) const;
 	std::string GetAuthorEntry(int index) const;
 	std::string GetDescriptionEntry(int index) const;
@@ -85,7 +85,7 @@ public:
 	C2D_Image GetStoreImg() const { return this->storeBG; };
 	bool customBG() const { return this->hasCustomBG; };
 
-	/* Return filename of the UniStore. */
+	/* Return filename of the Store. */
 	std::string GetFileName() const { return this->fileName; };
 private:
 	void SetC2DBGImage();

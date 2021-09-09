@@ -131,7 +131,7 @@ void StoreUtils::DrawSearchMenu(const std::vector<bool> &searchIncludes, const s
 	Here you can..
 
 	- Filter your apps for the marks.
-	- Search the UniStore.
+	- Search the Store.
 	- Include stuff into the search.
 
 	std::vector<bool> &searchIncludes: Reference to the searchIncludes.

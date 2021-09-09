@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_LANG_HPP
-#define _UNIVERSAL_UPDATER_LANG_HPP
+#ifndef _DARKSTORE_LANG_HPP
+#define _DARKSTORE_LANG_HPP
 
 #include "json.hpp"
 #include <string>

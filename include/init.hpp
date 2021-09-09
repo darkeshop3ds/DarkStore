@@ -24,8 +24,8 @@
 *         reasonable ways as different from the original version.
 */
 
-#ifndef _UNIVERSAL_UPDATER_INIT_HPP
-#define _UNIVERSAL_UPDATER_INIT_HPP
+#ifndef _DARKSTORE_INIT_HPP
+#define _DARKSTORE_INIT_HPP
 
 #include <3ds.h>
 

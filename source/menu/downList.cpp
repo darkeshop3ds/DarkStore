@@ -64,10 +64,10 @@ static const std::vector<Structs::ButtonPos> installedPos = {
 
 	const std::string &entryName: The name of the Entry. AKA: The Title Name.
 	int index: The Download index.
-	const std::string &unistoreName: The name of the UniStore filename.
+	const std::string &storeName: The name of the Store filename.
 	const std::string &author: The author of the app.
 */
-static bool CreateShortcut(const std::string &entryName, int index, const std::string &unistoreName, const std::string &author) {
+static bool CreateShortcut(const std::string &entryName, int index, const std::string &storeName, const std::string &author) {
 	std::string sName = Input::setkbdString(30, Lang::get("ENTER_SHORTCUT_FILENAME"), {});
 	if (sName == "") return false; // Just cancel.
 	std::ofstream out(config->shortcut() + "/" + sName + ".xml", std::ios::binary);
@@ -79,7 +79,7 @@ static bool CreateShortcut(const std::string &entryName, int index, const std::s
 	out << "	<executable>" << executable << "</executable>" << std::endl;
 
 	/* Arguments. */
-	out << "	<arg>\"" << unistoreName << "\" \"" << entryName << "\" \"" << std::to_string(index) << "\"" << "</arg>" << std::endl;
+	out << "	<arg>\"" << storeName << "\" \"" << entryName << "\" \"" << std::to_string(index) << "\"" << "</arg>" << std::endl;
 
 	/* Title. */
 	const std::string title = Input::setkbdString(30, Lang::get("ENTER_TITLE_SHORTCUT"), {});
@@ -223,7 +223,7 @@ void StoreUtils::DownloadHandle(const std::unique_ptr<StoreEntry> &entry, const 
 				if (touching(touch, installedPos[i])) {
 					if (i + StoreUtils::store->GetDownloadSIndex() < (int)entries.size()) {
 						if (installs[i + StoreUtils::store->GetDownloadSIndex()]) {
-							StoreUtils::meta->RemoveInstalled(StoreUtils::store->GetUniStoreTitle(), entry->GetTitle(), entries[i + StoreUtils::store->GetDownloadSIndex()]);
+							StoreUtils::meta->RemoveInstalled(StoreUtils::store->GetStoreTitle(), entry->GetTitle(), entries[i + StoreUtils::store->GetDownloadSIndex()]);
 							installs[i + StoreUtils::store->GetDownloadSIndex()] = false;
 						}
 					}
@@ -241,7 +241,7 @@ void StoreUtils::DownloadHandle(const std::unique_ptr<StoreEntry> &entry, const 
 
 		if (hDown & KEY_X && !entries.empty()) {
 			if (installs[StoreUtils::store->GetDownloadIndex()]) {
-				StoreUtils::meta->RemoveInstalled(StoreUtils::store->GetUniStoreTitle(), entry->GetTitle(), entries[StoreUtils::store->GetDownloadIndex()]);
+				StoreUtils::meta->RemoveInstalled(StoreUtils::store->GetStoreTitle(), entry->GetTitle(), entries[StoreUtils::store->GetDownloadIndex()]);
 				installs[StoreUtils::store->GetDownloadIndex()] = false;
 			}
 		}
