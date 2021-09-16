@@ -237,7 +237,7 @@ clean:
 	@rm -fr $(BUILD) $(TARGET).cia
 	@rm -fr $(BUILD) $(TARGET).elf
 	@rm -fr $(BUILD) $(TARGET).smdh
-	@rm -fr $(OUTDIR)
+	@mkdir -p build
 
 
 #---------------------------------------------------------------------------------
