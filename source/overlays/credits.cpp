@@ -43,11 +43,11 @@ void Overlays::ShowCredits() {
 		GFX::DrawSprite(sprites_universal_updater_idx, 220, 26);
 		Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), "DarkStore - " + Lang::get("CREDITS"), 395, 0, font);
 
-		Gui::DrawString(10, 30, 0.5f, UIThemes->TextColor(), "- Universal-Team", 0, 0, font);
-		Gui::DrawString(10, 50, 0.5f, UIThemes->TextColor(), "- devkitPro", 0, 0, font);
-		Gui::DrawString(10, 70, 0.5f, UIThemes->TextColor(), "- dlbeer", 0, 0, font);
-		Gui::DrawString(10, 90, 0.5f, UIThemes->TextColor(), "- FlagBrew", 0, 0, font);
-		Gui::DrawString(10, 110, 0.5f, UIThemes->TextColor(), "- https://icons8.com/", 0, 0, font);
+		Gui::DrawString(10, 30, 0.5f, UIThemes->TextColor(), "- Dark98", 0, 0, font);
+		Gui::DrawString(10, 50, 0.5f, UIThemes->TextColor(), "- DillPickle.mp4", 0, 0, font);
+		Gui::DrawString(10, 70, 0.5f, UIThemes->TextColor(), "- Universal-Team", 0, 0, font);
+		Gui::DrawString(10, 90, 0.5f, UIThemes->TextColor(), "- dlbeer", 0, 0, font);
+		Gui::DrawString(10, 110, 0.5f, UIThemes->TextColor(), "- FlagBrew", 0, 0, font);
 		Gui::DrawString(10, 130, 0.5f, UIThemes->TextColor(), "- Ivandeve", 0, 0, font);
 		Gui::DrawString(10, 150, 0.5f, UIThemes->TextColor(), "- PabloMK7", 0, 0, font);
 		Gui::DrawString(10, 170, 0.5f, UIThemes->TextColor(), Lang::get("CONTRIBUTOR_TRANSLATORS"), 210, 0, font);
