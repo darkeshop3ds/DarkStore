@@ -66,6 +66,8 @@
 	"ENTRIES": "Entries",
 	"EXECUTE_ENTRY": "Would you like to execute this entry?",
 	"EXIT_APP": "Exit DarkStore",
+	"NOTE_NIGHTLY": "Note: \"Nightly\" versions are intended for testing\nupcoming features and may be unstable.\n\nIf you simply want to install,\nplease cancel and install the normal version.",
+	"NOTE_PRERELEASE": "Note: This is a prerelease build and may be unstable.\n\nIf you simply want to install, you may\nwant to install the normal version if one exists.",
 	"EXTRACTING": "Extracting... %s / %s (%.2f%%)",
 	"EXTRACT_ERROR": "Extract error!",
 	"FEATURE_SIDE_EFFECTS": "This Feature may have side effects while the Queue is running.\nAre you sure you want to continue?",
