@@ -914,8 +914,8 @@ void UpdateAction() {
 				return;
 			}
 
-			ScriptUtils::installFile("sdmc:/DarkStore.cia", false, Lang::get("INSTALL_DARKSTORE"), true);
-			ScriptUtils::removeFile("sdmc:/DarkStore.cia", Lang::get("DELETE_UNNEEDED_FILE"), true);
+			ScriptUtils::installFile("sdmc:/DarkStore.cia", false, Lang::get("INSTALL_UNIVERSAL_UPDATER"), true);
+			ScriptUtils::removeFile("sdmc:/DarkStore.cia", true);
 			Msg::waitMsg(Lang::get("UPDATE_DONE"));
 			exiting = true;
 		}
