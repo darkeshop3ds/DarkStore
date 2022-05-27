@@ -75,8 +75,8 @@ MainScreen::MainScreen() {
 		if (access("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.unistore", F_OK) != 0) {
 			if (checkWifiStatus()) {
 				std::string tmp = ""; // Just a temp.
-				DownloadStore("https://darkstore.ml/app/darkstore-homebrew.unistore", -1, tmp, true, true);
-				DownloadSpriteSheet("https://darkstore.ml/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
+				DownloadStore("https://ds.dark98.co.uk/app/darkstore-homebrew.unistore", -1, tmp, true, true);
+				DownloadSpriteSheet("https://ds.dark98.co.uk/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
 
 			} else {
 				notConnectedMsg();
@@ -88,8 +88,8 @@ MainScreen::MainScreen() {
 			if (info.Version != 3 && info.Version != _STORE_VERSION) {
 				if (checkWifiStatus()) {
 					std::string tmp = ""; // Just a temp.
-					DownloadStore("https://darkstore.ml/app/darkstore-homebrew.unistore", -1, tmp, true, true);
-					DownloadSpriteSheet("https://darkstore.ml/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
+					DownloadStore("https://ds.dark98.co.uk/app/darkstore-homebrew.unistore", -1, tmp, true, true);
+					DownloadSpriteSheet("https://ds.dark98.co.uk/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
 
 				} else {
 					notConnectedMsg();

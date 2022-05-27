@@ -30,7 +30,6 @@
 #include "common.hpp"
 
 #define APP_TITLE "DarkStore"
-#define VERSION_STRING "3.0.0"
 
 enum DownloadError {
 	DL_ERROR_NONE = 0,
