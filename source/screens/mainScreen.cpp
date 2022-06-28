@@ -50,32 +50,32 @@ MainScreen::MainScreen() {
 	StoreUtils::meta = std::make_unique<Meta>();
 
 	/* Check if lastStore is accessible. */
-	if (config->lastStore() != "darkstore-homebrew.unistore" && config->lastStore() != "") {
+	if (config->lastStore() != "darkstore-homebrew.store" && config->lastStore() != "") {
 		if (access((_STORE_PATH + config->lastStore()).c_str(), F_OK) != 0) {
-			config->lastStore("darkstore-homebrew.unistore");
+			config->lastStore("darkstore-homebrew.store");
 
 		} else {
 			/* check version and file here. */
 			const StoreInfo info = GetInfo((_STORE_PATH + config->lastStore()), config->lastStore());
 
 			if (info.Version != 3 && info.Version != _STORE_VERSION) {
-				config->lastStore("darkstore-homebrew.unistore");
+				config->lastStore("darkstore-homebrew.store");
 			}
 
 			if (info.File != "") { // Ensure to check for this.
 				if ((info.File.find("/") != std::string::npos)) {
-					config->lastStore("darkstore-homebrew.unistore"); // It does contain a '/' which is invalid.
+					config->lastStore("darkstore-homebrew.store"); // It does contain a '/' which is invalid.
 				}
 			}
 		}
 	}
 
 	/* If Universal DB --> Get! */
-	if (config->lastStore() == "darkstore-homebrew.unistore" || config->lastStore() == "") {
-		if (access("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.unistore", F_OK) != 0) {
+	if (config->lastStore() == "darkstore-homebrew.store" || config->lastStore() == "") {
+		if (access("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.store", F_OK) != 0) {
 			if (checkWifiStatus()) {
 				std::string tmp = ""; // Just a temp.
-				DownloadStore("https://ds.dark98.co.uk/app/darkstore-homebrew.unistore", -1, tmp, true, true);
+				DownloadStore("https://ds.dark98.co.uk/app/darkstore-homebrew.store", -1, tmp, true, true);
 				DownloadSpriteSheet("https://ds.dark98.co.uk/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
 
 			} else {
@@ -83,12 +83,12 @@ MainScreen::MainScreen() {
 			}
 
 		} else {
-			const StoreInfo info = GetInfo("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.unistore", "darkstore-homebrew.unistore");
+			const StoreInfo info = GetInfo("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.store", "darkstore-homebrew.store");
 
 			if (info.Version != 3 && info.Version != _STORE_VERSION) {
 				if (checkWifiStatus()) {
 					std::string tmp = ""; // Just a temp.
-					DownloadStore("https://ds.dark98.co.uk/app/darkstore-homebrew.unistore", -1, tmp, true, true);
+					DownloadStore("https://ds.dark98.co.uk/app/darkstore-homebrew.store", -1, tmp, true, true);
 					DownloadSpriteSheet("https://ds.dark98.co.uk/app/darkstore-homebrew.t3x", "darkstore-homebrew.t3x");
 
 				} else {
