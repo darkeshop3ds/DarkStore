@@ -70,7 +70,7 @@ MainScreen::MainScreen() {
 		}
 	}
 
-	/* If Universal DB --> Get! */
+	/* If DarkStore-Homebrew --> Get! */
 	if (config->lastStore() == "darkstore-homebrew.store" || config->lastStore() == "") {
 		if (access("sdmc:/3ds/DarkStore/stores/darkstore-homebrew.store", F_OK) != 0) {
 			if (checkWifiStatus()) {
