@@ -40,7 +40,6 @@ void Overlays::ShowCredits() {
 		C2D_TargetClear(Bottom, TRANSPARENT);
 
 		GFX::DrawTop();
-		GFX::DrawSprite(sprites_universal_updater_idx, 220, 26);
 		Gui::DrawStringCentered(0, 1, 0.7f, UIThemes->TextColor(), "DarkStore - " + Lang::get("CREDITS"), 395, 0, font);
 
 		Gui::DrawString(10, 30, 0.5f, UIThemes->TextColor(), "- Dark98", 0, 0, font);
@@ -59,7 +58,7 @@ void Overlays::ShowCredits() {
 
 		Animation::QueueEntryDone();
 		GFX::DrawBottom();
-		GFX::DrawSprite(sprites_universal_core_idx, 0, 26);
+		GFX::DrawSprite(sprites_darkstore_banner_idx, 0, 26);
 		C3D_FrameEnd(0);
 
 		hidScanInput();
