@@ -55,7 +55,7 @@
 	"DOWNLOADING_COMPATIBLE_FONT": "호환되는 폰트 다운로드 중...",
 	"DOWNLOADING_SPRITE_SHEET": "스프라이트시트 다운로드 중...",
 	"DOWNLOADING_SPRITE_SHEET2": "스프라이트시트 다운로드 중 %i / %i...",
-	"DOWNLOADING_DEFAULT_STORE": "HomeBrew Store 다운로드 중...",
+	"DOWNLOADING_DEFAULT_STORE": "Homebrew Store 다운로드 중...",
 	"DONLOADING_DARKSTORE": "DarkStore 다운로드 중...",
 	"DOWNLOADING_STORE": "Store 다운로드 중...",
 	"ENTER_DESC_SHORTCUT": "바로가기 설명을 입력해주세요.",

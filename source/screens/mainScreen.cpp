@@ -44,7 +44,7 @@ extern void DisplayChangelog();
 
 	Initialized meta, store and StoreEntry class and:
 
-	- Downloads DarkStore-HomeBrew.. in case nothing exist.
+	- Downloads DarkStore-Homebrew.. in case nothing exist.
 */
 MainScreen::MainScreen() {
 	StoreUtils::meta = std::make_unique<Meta>();

@@ -1,14 +1,14 @@
 {
-	"DarkStore HomeBrew": {
-		"title": "DarkStore HomeBrew",
+	"DarkStore Homebrew": {
+		"title": "DarkStore Homebrew",
 		"author": "Dark98",
-		"url": "https://ds.dark98.co.uk/app/darkstore-homebrew.unistore",
-		"description": "DarkStore 3DS HomeBrew"
+		"url": "https://ds.dark98.co.uk/app/darkstore-homebrew.store",
+		"description": "DarkStore 3DS Homebrew"
 	},
 	   "DarkStore-NDS":{
        "title":"DarkStore-NDS",
        "author":"Dark98",
-       "url":"https://ds.dark98.co.uk/app/darkstore-nds.unistore",
+       "url":"https://ds.dark98.co.uk/app/darkstore-nds.store",
        "description":"NDS Stuff"
    }
 }
