@@ -53,7 +53,7 @@ Result ScriptUtils::removeFile(const std::string &file, bool isARG) {
 	out = std::regex_replace(file, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	out = std::regex_replace(out, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	out = std::regex_replace(out, std::regex("%3DSX%"), config->_3dsxPath());
-	out = std::regex_replace(out, std::regex("%NDS%"), config->ndsPath());
+	out = std::regex_replace(out, std::regex("%ROMS%"), config->romsPath());
 	out = std::regex_replace(out, std::regex("%FIRM%"), config->firmPath());
 
 	Result ret = NONE;
@@ -97,13 +97,13 @@ Result ScriptUtils::copyFile(const std::string &source, const std::string &desti
 	_source = std::regex_replace(source, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	_source = std::regex_replace(_source, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	_source = std::regex_replace(_source, std::regex("%3DSX%"), config->_3dsxPath());
-	_source = std::regex_replace(_source, std::regex("%NDS%"), config->ndsPath());
+	_source = std::regex_replace(_source, std::regex("%ROMS%"), config->romsPath());
 	_source = std::regex_replace(_source, std::regex("%FIRM%"), config->firmPath());
 
 	_dest = std::regex_replace(destination, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	_dest = std::regex_replace(_dest, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	_dest = std::regex_replace(_dest, std::regex("%3DSX%"), config->_3dsxPath());
-	_dest = std::regex_replace(_dest, std::regex("%NDS%"), config->ndsPath());
+	_dest = std::regex_replace(_dest, std::regex("%ROMS%"), config->romsPath());
 	_dest = std::regex_replace(_dest, std::regex("%FIRM%"), config->firmPath());
 
 	if (isARG) {
@@ -141,13 +141,13 @@ Result ScriptUtils::renameFile(const std::string &oldName, const std::string &ne
 	old = std::regex_replace(oldName, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	old = std::regex_replace(old, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	old = std::regex_replace(old, std::regex("%3DSX%"), config->_3dsxPath());
-	old = std::regex_replace(old, std::regex("%NDS%"), config->ndsPath());
+	old = std::regex_replace(old, std::regex("%ROMS%"), config->romsPath());
 	old = std::regex_replace(old, std::regex("%FIRM%"), config->firmPath());
 
 	_new = std::regex_replace(newName, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	_new = std::regex_replace(_new, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	_new = std::regex_replace(_new, std::regex("%3DSX%"), config->_3dsxPath());
-	_new = std::regex_replace(_new, std::regex("%NDS%"), config->ndsPath());
+	_new = std::regex_replace(_new, std::regex("%ROMS%"), config->romsPath());
 	_new = std::regex_replace(_new, std::regex("%FIRM%"), config->firmPath());
 
 	/* TODO: Kinda avoid that? */
@@ -161,7 +161,7 @@ Result ScriptUtils::downloadRelease(const std::string &repo, const std::string &
 	std::string out;
 	out = std::regex_replace(output, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	out = std::regex_replace(out, std::regex("%3DSX%"), config->_3dsxPath());
-	out = std::regex_replace(out, std::regex("%NDS%"), config->ndsPath());
+	out = std::regex_replace(out, std::regex("%ROMS%"), config->romsPath());
 	out = std::regex_replace(out, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	out = std::regex_replace(out, std::regex("%FIRM%"), config->firmPath());
 
@@ -205,7 +205,7 @@ Result ScriptUtils::downloadFile(const std::string &file, const std::string &out
 	std::string out;
 	out = std::regex_replace(output, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	out = std::regex_replace(out, std::regex("%3DSX%"), config->_3dsxPath());
-	out = std::regex_replace(out, std::regex("%NDS%"), config->ndsPath());
+	out = std::regex_replace(out, std::regex("%ROMS%"), config->romsPath());
 	out = std::regex_replace(out, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	out = std::regex_replace(out, std::regex("%FIRM%"), config->firmPath());
 
@@ -251,7 +251,7 @@ void ScriptUtils::installFile(const std::string &file, bool updatingSelf, const 
 	in = std::regex_replace(file, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	in = std::regex_replace(in, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	in = std::regex_replace(in, std::regex("%3DSX%"), config->_3dsxPath());
-	in = std::regex_replace(in, std::regex("%NDS%"), config->ndsPath());
+	in = std::regex_replace(in, std::regex("%ROMS%"), config->romsPath());
 	in = std::regex_replace(in, std::regex("%FIRM%"), config->firmPath());
 
 	if (isARG) {
@@ -282,13 +282,13 @@ Result ScriptUtils::extractFile(const std::string &file, const std::string &inpu
 	in = std::regex_replace(file, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	in = std::regex_replace(in, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	in = std::regex_replace(in, std::regex("%3DSX%"), config->_3dsxPath());
-	in = std::regex_replace(in, std::regex("%NDS%"), config->ndsPath());
+	in = std::regex_replace(in, std::regex("%ROMS%"), config->romsPath());
 	in = std::regex_replace(in, std::regex("%FIRM%"), config->firmPath());
 
 	out = std::regex_replace(output, std::regex("%ARCHIVE_DEFAULT%"), config->archPath());
 	out = std::regex_replace(out, std::regex("%3DSX%/(.*)\\.(.*)"), config->_3dsxPath() + (config->_3dsxInFolder() ? "/$1/$1.$2" : "/$1.$2"));
 	out = std::regex_replace(out, std::regex("%3DSX%"), config->_3dsxPath());
-	out = std::regex_replace(out, std::regex("%NDS%"), config->ndsPath());
+	out = std::regex_replace(out, std::regex("%ROMS%"), config->romsPath());
 	out = std::regex_replace(out, std::regex("%FIRM%"), config->firmPath());
 
 	if (isARG) {

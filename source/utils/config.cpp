@@ -129,7 +129,7 @@ Config::Config() {
 	if (this->json.contains("AutoUpdate")) this->autoupdate(this->getBool("AutoUpdate"));
 	if (this->json.contains("_3DSX_Path")) this->_3dsxPath(this->getString("_3DSX_Path"));
 	if (this->json.contains("_3DSX_InFolder")) this->_3dsxInFolder(this->getBool("_3DSX_InFolder"));
-	if (this->json.contains("NDS_Path")) this->ndsPath(this->getString("NDS_Path"));
+	if (this->json.contains("ROMS_Path")) this->romsPath(this->getString("ROMS_Path"));
 	if (this->json.contains("Archive_Path")) this->archPath(this->getString("Archive_Path"));
 	if (this->json.contains("Firm_Path")) this->firmPath(this->getString("Firm_Path"));
 	if (this->json.contains("MetaData")) this->metadata(this->getBool("MetaData"));
@@ -169,7 +169,7 @@ void Config::save() {
 		this->setBool("AutoUpdate", this->autoupdate());
 		this->setString("_3DSX_Path", this->_3dsxPath());
 		this->setBool("_3DSX_InFolder", this->_3dsxInFolder());
-		this->setString("NDS_Path", this->ndsPath());
+		this->setString("ROMS_Path", this->romsPath());
 		this->setString("Archive_Path", this->archPath());
 		this->setString("Firm_Path", this->firmPath());
 		this->setBool("MetaData", this->metadata());
