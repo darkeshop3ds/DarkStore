@@ -61,8 +61,8 @@ public:
 	std::string _3dsxPath() const { return this->v_3dsxPath; };
 	void _3dsxPath(const std::string &v) { this->v_3dsxPath = v; if (!this->changesMade) this->changesMade = true; };
 
-	std::string ndsPath() const { return this->v_ndsPath; };
-	void ndsPath(const std::string &v) { this->v_ndsPath = v; if (!this->changesMade) this->changesMade = true; };
+	std::string romsPath() const { return this->v_romsPath; };
+	void romsPath(const std::string &v) { this->v_romsPath = v; if (!this->changesMade) this->changesMade = true; };
 
 	std::string archPath() const { return this->v_archivePath; };
 	void archPath(const std::string &v) { this->v_archivePath = v; if (!this->changesMade) this->changesMade = true; };
@@ -117,8 +117,8 @@ private:
 	nlohmann::json json;
 	bool changesMade = false;
 
-	std::string v_language = "en", v_lastStore = "darkstore-homebrew.unistore",
-				v_3dsxPath = "sdmc:/3ds", v_ndsPath = "sdmc:/roms/nds", v_archivePath = "sdmc:",
+	std::string v_language = "en", v_lastStore = "darkstore-homebrew.store",
+				v_3dsxPath = "sdmc:/3ds", v_romsPath = "sdmc:/roms", v_archivePath = "sdmc:",
 				v_shortcutPath = "sdmc:/3ds/DarkStore/shortcuts", v_firmPath = "sdmc:/luma/payloads", v_theme = "Default";
 
 	bool v_list = false, v_autoUpdate = true, v_metadata = true, v_updateCheck = true, v_updateNightly = false,

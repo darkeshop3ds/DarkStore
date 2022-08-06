@@ -83,7 +83,7 @@ static const Structs::ButtonPos Theme = { 40, 196, 280, 24 }; // Themes.
 
 
 static const std::vector<std::string> mainStrings = { "LANGUAGE", "SELECT_STORE", "AUTO_UPDATE_SETTINGS_BTN", "GUI_SETTINGS_BTN", "DIRECTORY_SETTINGS_BTN", "CREDITS", "EXIT_APP" };
-static const std::vector<std::string> dirStrings = { "CHANGE_3DSX_PATH", "3DSX_IN_FOLDER", "CHANGE_NDS_PATH", "CHANGE_ARCHIVE_PATH", "CHANGE_SHORTCUT_PATH", "CHANGE_FIRM_PATH" };
+static const std::vector<std::string> dirStrings = { "CHANGE_3DSX_PATH", "3DSX_IN_FOLDER", "CHANGE_ROMS_PATH", "CHANGE_ARCHIVE_PATH", "CHANGE_SHORTCUT_PATH", "CHANGE_FIRM_PATH" };
 extern std::vector<std::pair<std::string, std::string>> Themes;
 
 /* Note: Украïнська is spelled using a latin i with dieresis to work in the system font */
@@ -333,7 +333,7 @@ static void SettingsHandleMain(int &page, bool &dspSettings, int &storeMode, int
 	Here you can..
 
 	- Change the Directory of...
-		- 3DSX, NDS & Archives.
+		- 3DSX, ROMS & Archives.
 
 	int &page: Reference to the page.
 	int &selection: Reference to the Selection.
@@ -377,8 +377,8 @@ static void SettingsHandleDir(int &page, int &selection) {
 			config->_3dsxInFolder(!config->_3dsxInFolder());
 
 		} else if (touching(touch, dirButtons[2])) {
-			const std::string path = Overlays::SelectDir(config->ndsPath(), Lang::get("SELECT_DIR"));
-			if (path != "") config->ndsPath(path);
+			const std::string path = Overlays::SelectDir(config->romsPath(), Lang::get("SELECT_DIR"));
+			if (path != "") config->romsPath(path);
 
 		} else if (touching(touch, dirButtons[3])) {
 			const std::string path = Overlays::SelectDir(config->archPath(), Lang::get("SELECT_DIR"));
@@ -408,8 +408,8 @@ static void SettingsHandleDir(int &page, int &selection) {
 				break;
 
 			case 2:
-				path = Overlays::SelectDir(config->ndsPath(), Lang::get("SELECT_DIR"));
-				if (path != "") config->ndsPath(path);
+				path = Overlays::SelectDir(config->romsPath(), Lang::get("SELECT_DIR"));
+				if (path != "") config->romsPath(path);
 				break;
 
 			case 3:
